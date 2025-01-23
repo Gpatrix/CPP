@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 17:18:01 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/23 17:54:20 by lchauvet         ###   ########.fr       */
+/*   Created: 2025/01/23 17:58:13 by lchauvet          #+#    #+#             */
+/*   Updated: 2025/01/23 17:59:02 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main(void)
+Zombie* zombieHorde(int N, std::string name)
 {
-	Zombie*	zombie;
 
-	randomChump(("Cap'n amoraru"));
-	zombie = newZombie("Baptiste");
-	if (zombie)
-		zombie->announce();
-	delete zombie;
-	return (0);
 }

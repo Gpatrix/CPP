@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 17:18:01 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/23 17:54:20 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:57:01 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ int main(void)
 
 	randomChump(("Cap'n amoraru"));
 	zombie = newZombie("Baptiste");
-	if (zombie)
-		zombie->announce();
+	zombie->announce();
 	delete zombie;
 	return (0);
 }
