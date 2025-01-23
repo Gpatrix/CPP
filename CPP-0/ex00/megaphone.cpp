@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 09:47:44 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/23 14:35:56 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/23 16:45:55 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
 {
 	if (argc < 2)
 	{
-		std::cout << DEFAULT << std::endl;
+		std::cout << DEFAULT << '\n';
 		return (EXIT_SUCCESS);
 	}
 
