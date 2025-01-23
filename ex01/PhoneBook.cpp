@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:20:52 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/23 12:57:28 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:06:57 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,11 @@ void	PhoneBook::add(void)
 		{
 			std::cout << question[i];
 			getline(std::cin, input);
+			if (std::cin.eof())
+				return ;
 			if (!valid_input(input))
 			{
-				std::cout << ERROR_EMPTY_STR;
+				std::cout << ERROR_EMPTY_STR << '\n';
 				continue ;
 			}
 			break ;
