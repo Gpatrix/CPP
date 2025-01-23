@@ -65,6 +65,10 @@
 		"__hash_table": "cpp",
 		"__split_buffer": "cpp",
 		"locale": "cpp",
-		"version": "cpp"
+		"version": "cpp",
+		"iomanip": "cpp"
+	},
+	"[cpp]": {
+		"editor.suggest.insertMode": "insert"
 	}
 }
