@@ -6,13 +6,15 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:27:42 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/23 12:54:15 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:55:05 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstdlib>
 #include "PhoneBook.hpp"
+
+#define ERROR_CMD "\033[1;31mcommand not found\033[0m"
 
 int main(void)
 {
@@ -27,9 +29,12 @@ int main(void)
 		if (std::cin.eof() || input == "EXIT")
 			break ;
 		else if (input == "ADD")
-		{
-			my_PhoneBook.add();
-		}
+			my_PhoneBook.ADD();
+		else if (input == "SEARCH")
+			my_PhoneBook.SEARCH();
+		else
+			std::cout << ERROR_CMD << '\n';
+		
 	}	
 	return (EXIT_SUCCESS);
 }
