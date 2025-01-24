@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 17:18:01 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/24 10:54:43 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/24 11:25:24 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main(void)
 {
 	Zombie*	zombie;
-	int nb_of_zombie = 50000;
+	int nb_of_zombie = 5;
 
 	zombie = zombieHorde(nb_of_zombie, "Cap'n amoraru");
 	if (!zombie)
