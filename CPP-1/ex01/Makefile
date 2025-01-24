@@ -5,7 +5,7 @@ RM		= rm -f
 
 NAME	= Moar_brainz!
 
-FILE	= main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+FILE	= main.cpp zombieHorde.cpp Zombie.cpp
 
 OBJS	= $(FILE:%.cpp=%.o)
 
