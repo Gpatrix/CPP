@@ -6,17 +6,19 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 12:56:58 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/24 13:14:31 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/24 14:10:33 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Replace.hpp"
+#include <cstdlib>
 
 int main(int argc, char const **argv)
 {
-	Replace replacer;
-
-	replacer.replace(argc, argv);
-	return 0;
+	if (argc != 4)
+		return (EXIT_FAILURE);
+	std::string	filename = argv[1];
+	std::string	s1 = argv[2];
+	std::string	s2 = argv[3];
+	return (0);
 }

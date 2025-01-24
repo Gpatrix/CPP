@@ -3,9 +3,9 @@ CFLAGS	= -Wall -Wextra -Werror -g3 -std=c++98
 
 RM		= rm -f
 
-NAME	= Unnecessary_violence 
+NAME	= losers
 
-FILE	= main.cpp Replacers.cpp
+FILE	= main.cpp
 
 OBJS	= $(FILE:%.cpp=%.o)
 
