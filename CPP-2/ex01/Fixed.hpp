@@ -6,13 +6,13 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:40 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/27 16:52:03 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/27 17:01:29 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 class Fixed
 {
