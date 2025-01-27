@@ -6,10 +6,11 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:16:01 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/27 13:19:36 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:12:46 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 
 class Harl
