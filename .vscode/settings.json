@@ -66,7 +66,15 @@
 		"__split_buffer": "cpp",
 		"locale": "cpp",
 		"version": "cpp",
-		"iomanip": "cpp"
+		"iomanip": "cpp",
+		"codecvt": "cpp",
+		"fstream": "cpp",
+		"filesystem": "cpp",
+		"__functional_03": "cpp",
+		"__mutex_base": "cpp",
+		"__node_handle": "cpp",
+		"__tuple": "cpp",
+		"ios": "cpp"
 	},
 	"[cpp]": {
 		"editor.suggest.insertMode": "insert"
