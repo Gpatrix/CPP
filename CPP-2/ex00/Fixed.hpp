@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:40 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/27 15:28:24 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:37:42 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class Fixed
 {
 private:
 	int					value;
-	static const int	bitNb;
+	static const int	bitNb = 8;
 public:
 	Fixed(void);
 	Fixed(const Fixed&);
