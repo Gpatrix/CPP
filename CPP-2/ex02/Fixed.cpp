@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:51 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/28 14:53:51 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/28 15:09:35 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,35 @@ std::ostream&	operator<<(std::ostream &out, const Fixed& fixed)
 	return (out);
 }
 
+bool Fixed::operator< (const Fixed& fixed) const
+{
+	return (this->value < fixed.getRawBits());
+}
+
+bool Fixed::operator> (const Fixed& fixed) const
+{
+	return (this->value > fixed.getRawBits());
+}
+
+bool Fixed::operator<=(const Fixed& fixed) const
+{
+	return (this->value <= fixed.getRawBits());
+}
+
+bool Fixed::operator>=(const Fixed& fixed) const
+{
+	return (this->value >= fixed.getRawBits());
+}
+
+bool Fixed::operator==(const Fixed& fixed) const
+{
+	return (this->value == fixed.getRawBits());
+}
+
+bool Fixed::operator!=(const Fixed& fixed) const
+{
+	return (this->value != fixed.getRawBits());
+}
 // prefix increment
 Fixed& Fixed::operator++(void)
 {

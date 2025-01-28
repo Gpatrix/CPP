@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:40 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/28 14:50:03 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/28 15:09:11 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ public:
 	Fixed(const Fixed&);
 
 	Fixed&	operator=(const Fixed&);
+
+	bool operator< (const Fixed& fixed) const;
+	bool operator> (const Fixed& fixed) const;
+	bool operator<=(const Fixed& fixed) const;
+	bool operator>=(const Fixed& fixed) const;
+	bool operator==(const Fixed& fixed) const;
+	bool operator!=(const Fixed& fixed) const;
 
 	Fixed&	operator++(void);
 	Fixed	operator++(int);
