@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:40 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/28 16:07:44 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:24:20 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ public:
 	Fixed(const int);
 	Fixed(const float);
 	Fixed(const Fixed&);
+
+	int		toInt(void) const;
+	float	toFloat(void) const;
+
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
 
 	Fixed&	operator=(const Fixed&);
 
@@ -43,13 +49,13 @@ public:
 	Fixed	operator++(int);
 	Fixed&	operator--();
 	Fixed	operator--(int);
+
+	static Fixed&		min(Fixed& a, Fixed& b);
+	static const Fixed&	min(const Fixed& a, const Fixed& b);
+	static Fixed&		max(Fixed& a, Fixed& b);
+	static const Fixed&	max(const Fixed& a, const Fixed& b);
+
 	~Fixed();
-
-	int		toInt(void) const;
-	float	toFloat(void) const;
-
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
 };
 
-	std::ostream&	operator<<(std::ostream& flux, const Fixed&);
+std::ostream&	operator<<(std::ostream& flux, const Fixed&);

@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:51 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/28 16:12:33 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:27:44 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,26 @@ Fixed Fixed::operator--(int)
 	Fixed old = *this;
 	operator--();
 	return old;
+}
+
+Fixed&		Fixed::min(Fixed& a, Fixed& b)
+{
+	return (a < b ? a : b);
+}
+
+const Fixed&	Fixed::min(const Fixed& a, const Fixed& b)
+{
+	return (a < b ? a : b);
+}
+
+Fixed&		Fixed::max(Fixed& a, Fixed& b)
+{
+	return (a < b ? b : a);
+}
+
+const Fixed&	Fixed::max(const Fixed& a, const Fixed& b)
+{
+	return (a < b ? b : a);
 }
 
 void	Fixed::setRawBits(int const raw)
