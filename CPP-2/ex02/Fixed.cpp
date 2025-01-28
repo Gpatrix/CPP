@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:51 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/28 15:09:35 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:12:33 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,27 @@ bool Fixed::operator!=(const Fixed& fixed) const
 {
 	return (this->value != fixed.getRawBits());
 }
+
+Fixed Fixed::operator+(const Fixed& fixed) const
+{
+	return Fixed(this->toFloat() + fixed.toFloat());
+}
+
+Fixed Fixed::operator-(const Fixed& fixed) const
+{
+	return Fixed(this->toFloat() - fixed.toFloat());
+}
+
+Fixed Fixed::operator*(const Fixed& fixed) const
+{
+	return Fixed(this->toFloat() * fixed.toFloat());
+}
+
+Fixed Fixed::operator/(const Fixed& fixed) const
+{
+	return Fixed(this->toFloat() / fixed.toFloat());
+}
+
 // prefix increment
 Fixed& Fixed::operator++(void)
 {
