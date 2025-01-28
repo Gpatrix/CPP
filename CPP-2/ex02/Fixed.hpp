@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:40 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/27 17:20:41 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:50:03 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,38 +25,12 @@ public:
 	Fixed(const float);
 	Fixed(const Fixed&);
 
-	Fixed&					operator=(const Fixed&);
-	friend std::ostream&	operator<<(std::ostream& flux, const Fixed&);
+	Fixed&	operator=(const Fixed&);
 
-	Fixed& operator++(void)
-	{
-		// actual increment takes place here
-		return (*this); // return new value by reference
-	}
-
-	// postfix increment
-	Fixed operator++(int)
-	{
-		Fixed old = *this; // copy old value
-		operator++();  // prefix increment
-		return old;    // return old value
-	}
-
-	// prefix decrement
-	Fixed& operator--()
-	{
-		// actual decrement takes place here
-		return *this; // return new value by reference
-	}
-
-	// postfix decrement
-	Fixed operator--(int)
-	{
-		Fixed old = *this; // copy old value
-		operator--();  // prefix decrement
-		return old;    // return old value
-	}
-
+	Fixed&	operator++(void);
+	Fixed	operator++(int);
+	Fixed&	operator--();
+	Fixed	operator--(int);
 	~Fixed();
 
 	int		toInt(void) const;
@@ -65,3 +39,5 @@ public:
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 };
+
+	std::ostream&	operator<<(std::ostream& flux, const Fixed&);

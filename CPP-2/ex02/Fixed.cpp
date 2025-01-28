@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:51 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/27 17:06:38 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:53:51 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int		Fixed::getRawBits(void) const
 
 Fixed&	Fixed::operator=(const Fixed& fixed)
 {
+	if (this == &fixed)
+		return (*this);
 	this->value = fixed.getRawBits();
 	return (*this);
 }
@@ -58,6 +60,36 @@ std::ostream&	operator<<(std::ostream &out, const Fixed& fixed)
 {
 	out << fixed.toFloat();
 	return (out);
+}
+
+// prefix increment
+Fixed& Fixed::operator++(void)
+{
+	this->value++;
+	return (*this);
+}
+
+// postfix increment
+Fixed Fixed::operator++(int)
+{
+	Fixed old = *this;
+	operator++();
+	return old;
+}
+
+// prefix decrement
+Fixed& Fixed::operator--()
+{
+	this->value--;
+	return *this;
+}
+
+// postfix decrement
+Fixed Fixed::operator--(int)
+{
+	Fixed old = *this;
+	operator--();
+	return old;
 }
 
 void	Fixed::setRawBits(int const raw)
