@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:19:33 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 12:12:44 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:17:30 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ScavTrap::attack(const std::string& target)
 	else
 	{
 		this->EnergyPoint--;
-		std::cout << this->Name << " attacks with extreme power to " << target <<
+		std::cout << this->Name << " attacks with extreme power " << target <<
 			", causing " << this->AttackDamage << " points of damage!\n";
 	}
 }
