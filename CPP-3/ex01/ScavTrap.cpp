@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:19:33 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 12:17:30 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:30:11 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(void)
 
 ScavTrap::ScavTrap(std::string Name)
 {
-	std::cout << "ScrapTrape Name constructor called\n";
+	std::cout << "ScrapTrap Name constructor called\n";
 	this->Name = Name;
 	this->HitPoint = 100;
 	this->EnergyPoint = 50;
