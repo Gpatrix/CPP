@@ -74,7 +74,8 @@
 		"__mutex_base": "cpp",
 		"__node_handle": "cpp",
 		"__tuple": "cpp",
-		"ios": "cpp"
+		"ios": "cpp",
+		"__locale": "cpp"
 	},
 	"[cpp]": {
 		"editor.suggest.insertMode": "insert"
