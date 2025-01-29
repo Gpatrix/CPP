@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 09:21:45 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 12:42:11 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/29 13:04:23 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ public:
 	ClapTrap(std::string Name);
 	ClapTrap(const ClapTrap&);
 
-	void	attack(const std::string& target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	virtual void	attack(const std::string& target);
+	void			takeDamage(unsigned int amount);
+	void			beRepaired(unsigned int amount);
 
 	int		getAttackDamage(void);
 
