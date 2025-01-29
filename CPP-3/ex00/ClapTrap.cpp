@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:30:58 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 11:30:59 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:18:59 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,13 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& assign)
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if (this->EnergyPoint <= 0)
+
+	if (this->HitPoint <= 0)
+	{
+		std::cout << "ClapTrap " << this->Name <<
+		 " is dead he can't attack\n";
+	}
+	else if (this->EnergyPoint <= 0)
 	{
 		std::cout << "ClapTrap " << this->Name <<
 		 " don't have enough energy to attack\n";
