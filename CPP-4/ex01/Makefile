@@ -5,7 +5,7 @@ RM		= rm -f
 
 NAME	= Animal
 
-FILE	= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+FILE	= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS	= $(FILE:%.cpp=%.o)
 
