@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:09:14 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 09:44:46 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:09:59 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int main(void)
 	cat.makeSound();
 
 
+	delete wrongcat;
 	delete meta;
 	delete dog;
 	return 0;

@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:15:46 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 09:37:25 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:09:05 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Animal::Animal(const Animal& copy)
 
 Animal&	Animal::operator=(const Animal& assign)
 {
-	if (this == &assign)
+	if (this != &assign)
 	{
 		this->type = assign.type;
 	}

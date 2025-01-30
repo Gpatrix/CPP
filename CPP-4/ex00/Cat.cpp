@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:37:03 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 15:42:45 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:09:05 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Cat::Cat(const Cat& copy)
 
 Cat&	Cat::operator=(const Cat& assign)
 {
-	if (this == &assign)
+	if (this != &assign)
 	{
 		this->type = assign.type;
 	}

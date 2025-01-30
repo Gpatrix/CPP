@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:37:03 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 09:40:24 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:09:11 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ WrongCat::WrongCat(const WrongCat& copy)
 
 WrongCat&	WrongCat::operator=(const WrongCat& assign)
 {
-	if (this == &assign)
+	if (this != &assign)
 	{
 		this->type = assign.type;
 	}

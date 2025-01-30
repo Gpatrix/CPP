@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:15:46 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 09:38:56 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:09:09 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal& copy)
 
 WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& assign)
 {
-	if (this == &assign)
+	if (this != &assign)
 	{
 		this->type = assign.type;
 	}
