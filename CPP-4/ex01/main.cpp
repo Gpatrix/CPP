@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:09:14 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 16:39:54 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:57:40 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,24 @@
 
 int main(void)
 {
-	const Animal*	meta = new Animal();
-	const Animal*	dog  = new Dog();
-	const Cat		cat;
+	const Animal* dog = new Dog();
+	const Animal* cat = new Cat();
 
-	std::cout << meta->getType() << '\n';
-	meta->makeSound();
-
-	std::cout << dog->getType() << '\n';
-	dog->makeSound();
-
-	std::cout << cat.getType() << '\n';
-	cat.makeSound();
-
-
-	delete meta;
 	delete dog;
-	return 0;
+	delete cat;
+
+	Animal* animals[100];
+
+	for (short i = 0; i < 100; i += 2)
+	{
+		animals[i] = new Dog();
+		animals[i + 1] = new Cat();
+	}
+	for (short i = 0; i < 100; i += 2)
+	{
+		delete animals[i];
+		delete animals[i + 1];
+	}
+
+	return (0);
 }

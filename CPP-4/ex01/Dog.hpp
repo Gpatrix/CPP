@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:34:59 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 16:07:19 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:36:13 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Dog : public Animal
 {
 
 private:
-	Brain*	brains;
+	Brain*	brain;
 
 public:
 	Dog(void);
@@ -28,7 +28,7 @@ public:
 
 	Dog&	operator=(const Dog&);
 
-	void makeSound(void) const;
+	void	makeSound(void) const;
 
 	~Dog(void);
 };
