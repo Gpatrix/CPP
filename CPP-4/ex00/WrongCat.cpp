@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 15:15:46 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 09:37:25 by lchauvet         ###   ########.fr       */
+/*   Created: 2025/01/29 15:37:03 by lchauvet          #+#    #+#             */
+/*   Updated: 2025/01/30 09:40:24 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongCat.hpp"
 
-Animal::Animal(void)
+WrongCat::WrongCat(void)
 {
-	this->type = "Unknow";
+	this->type = "Cat";
 }
 
-Animal::Animal(const Animal& copy)
+WrongCat::WrongCat(const WrongCat& copy)
 {
 	if (this != &copy)
 		this->operator=(copy);
 }
 
-Animal&	Animal::operator=(const Animal& assign)
+WrongCat&	WrongCat::operator=(const WrongCat& assign)
 {
 	if (this == &assign)
 	{
@@ -32,14 +32,9 @@ Animal&	Animal::operator=(const Animal& assign)
 	return (*this);
 }
 
-std::string	Animal::getType(void) const
+void WrongCat::makeSound(void) const
 {
-	return (this->type);
+	std::cout << "miaou" << '\n';
 }
 
-void Animal::makeSound(void) const
-{
-	std::cout << "[Unknown Animal] zzzz..." << '\n';
-}
-
-Animal::~Animal() {}
+WrongCat::~WrongCat() {}

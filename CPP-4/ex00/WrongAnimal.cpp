@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:15:46 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 09:37:25 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/30 09:38:56 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal(void)
+WrongAnimal::WrongAnimal(void)
 {
 	this->type = "Unknow";
 }
 
-Animal::Animal(const Animal& copy)
+WrongAnimal::WrongAnimal(const WrongAnimal& copy)
 {
 	if (this != &copy)
 		this->operator=(copy);
 }
 
-Animal&	Animal::operator=(const Animal& assign)
+WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& assign)
 {
 	if (this == &assign)
 	{
@@ -32,14 +32,14 @@ Animal&	Animal::operator=(const Animal& assign)
 	return (*this);
 }
 
-std::string	Animal::getType(void) const
+std::string	WrongAnimal::getType(void) const
 {
 	return (this->type);
 }
 
-void Animal::makeSound(void) const
+void WrongAnimal::makeSound(void) const
 {
-	std::cout << "[Unknown Animal] zzzz..." << '\n';
+	std::cout << "[Unknown WrongAnimal] hhhhh..." << '\n';
 }
 
-Animal::~Animal() {}
+WrongAnimal::~WrongAnimal() {}
