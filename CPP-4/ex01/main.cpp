@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:09:14 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 10:57:40 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:08:53 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,13 @@ int main(void)
 	const Animal* dog = new Dog();
 	const Animal* cat = new Cat();
 
+	const Dog* dog_solo = new Dog();
+	const Cat* cat_solo = new Cat();
+
 	delete dog;
 	delete cat;
+	delete dog_solo;
+	delete cat_solo;
 
 	Animal* animals[100];
 
