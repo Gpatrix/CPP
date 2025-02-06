@@ -3,7 +3,7 @@ CFLAGS	= -Wall -Wextra -Werror -g3 -std=c++98
 
 RM		= rm -f
 
-NAME	= main
+NAME	= PhoneBook
 
 FILE	= main.cpp Contact.cpp PhoneBook.cpp
 
