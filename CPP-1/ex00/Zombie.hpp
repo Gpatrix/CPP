@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 16:54:13 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/23 17:23:51 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/06 13:37:43 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Zombie
 		Zombie(std::string name);
 		~Zombie();
 		
-		void announce(void);
+		void announce(void) const;
 };
 
 void	randomChump(std::string name);
