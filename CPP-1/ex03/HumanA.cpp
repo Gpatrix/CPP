@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 11:50:50 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/24 12:11:33 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/11 15:56:07 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,4 @@ void	HumanA::attack(void)
 	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << '\n';
 }
 
-
-HumanA::~HumanA()
-{
-}
+HumanA::~HumanA() {}
