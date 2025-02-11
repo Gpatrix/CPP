@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 12:56:58 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/27 13:03:38 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/11 16:12:57 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	find_and_replace(std::string& content, std::string s1, std::string s2)
 		{
 			content.erase(pos, s1.length());
 			content.insert(pos, s2);
+			pos += s2.length();
 		}
 	}
 }
@@ -54,7 +55,7 @@ bool	copie_content(std::string& content, std::string filename)
 	OutFile.open((filename + ".replace").c_str(), std::ios::out | std::ios::trunc);
 	if (!OutFile.is_open())
 	{
-		std::cout << ERROR_OPEN_FILE << " \'" << filename << "\'\n";
+		std::cout << ERROR_OPEN_FILE << " \'" << filename + ".replace" << "\'\n";
 		return (EXIT_FAILURE);
 	}
 	OutFile << content;
@@ -64,7 +65,6 @@ bool	copie_content(std::string& content, std::string filename)
 
 int main(int argc, char **argv)
 {
-	std::ofstream	OutFile;
 	std::string		content;
 
 	if (argc != 4
