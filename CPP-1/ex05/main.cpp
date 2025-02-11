@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:11:09 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/27 14:00:47 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/11 16:18:27 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int main(void)
 	std::cout << '\n';
 	harl.complain("ERROR");
 	std::cout << '\n';
-	harl.complain("not working");
+	harl.complain("HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 	return (EXIT_SUCCESS);
 }
