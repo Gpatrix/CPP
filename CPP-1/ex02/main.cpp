@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 11:07:21 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/24 11:20:41 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/11 15:49:00 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(void)
 {
-	std::string	str = "HI THIS IS BRAIN";
+	std::string		str("HI THIS IS BRAIN");
 	std::string*	stringPTR = &str;
 	std::string&	stringREF = str;
 
