@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 11:50:50 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/24 12:23:58 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/11 16:00:04 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,4 @@ void	HumanB::setWeapon(Weapon& new_weapon)
 	this->_weapon = &new_weapon;
 }
 
-HumanB::~HumanB()
-{
-}
+HumanB::~HumanB() {}
