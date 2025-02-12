@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:51 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 08:44:14 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/12 09:26:45 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Fixed::Fixed(const int nb)
 
 Fixed::Fixed(const float nb)
 {
-	this->value = roundf(nb * pow(2, this->bitNb));
+	this->value = roundf(nb * (1 << this->bitNb));
 }
 
 Fixed::Fixed(const Fixed& fixed)
@@ -39,7 +39,7 @@ int		Fixed::toInt(void) const
 
 float	Fixed::toFloat(void) const
 {
-	return (this->value / pow(2, this->bitNb));
+	return (this->value / (float)(1 << this->bitNb));
 }
 
 int		Fixed::getRawBits(void) const
@@ -126,7 +126,7 @@ Fixed Fixed::operator++(int)
 }
 
 // prefix decrement
-Fixed& Fixed::operator--()
+Fixed& Fixed::operator--(void)
 {
 	this->value--;
 	return *this;
