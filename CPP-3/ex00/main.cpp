@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 09:13:18 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 11:13:43 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/12 09:49:37 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ int main(void)
 
 	claptrap1.attack("Baptiste");
 	claptrap2.takeDamage(0);
+	claptrap2.beRepaired(5);
+	claptrap2.beRepaired(5);
+	claptrap2.beRepaired(5);
+	claptrap2.beRepaired(5);
+	claptrap2.beRepaired(5);
+	claptrap2.beRepaired(5);
+	claptrap2.beRepaired(5);
+	claptrap2.beRepaired(5);
+	claptrap2.beRepaired(5);
+	claptrap2.beRepaired(5);
 	claptrap2.beRepaired(5);
 
 	return 0;
