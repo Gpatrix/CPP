@@ -6,12 +6,13 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:10:40 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/12 12:36:02 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/13 12:09:45 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include <exception>
 
 class Bureaucrat
 {
@@ -20,12 +21,31 @@ class Bureaucrat
 		int					grade;
 
 	public:
-		Bureaucrat(std::string new_name, int& new_grade);
+		Bureaucrat(void);
+		Bureaucrat(std::string& new_name, int& new_grade);
+		Bureaucrat(const Bureaucrat&);
+
+		Bureaucrat&	operator=(const Bureaucrat&);
+
+		friend std::ostream&	operator<<(std::ostream& stream, const Bureaucrat&);
+
+		void	incrementGrade(void);
+		void	decrementGrade(void);
 
 		std::string	getName(void) const;
 		int			getGrade(void) const;
-	
-		friend std::ostream&	operator<<(std::ostream& flux, const Bureaucrat&);
+
+		class GradeTooHighException: public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+		
+		class GradeTooLowException: public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
 
 		~Bureaucrat(void);
 };
