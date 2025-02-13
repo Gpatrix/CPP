@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:50:54 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/13 14:43:52 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/13 16:54:02 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ std::ostream&	operator<<(std::ostream& stream, const Form& form)
 	stream << form.getName() << ", Form"
 	<< "\n\tmin sign sign : " << form.getminSignGrade()
 	<< "\n\tmin sign grade: " << form.getminSignGrade()
-	<< "\n\tis_signed     : " << form.getis_signed();
+	<< "\n\tis_signed     : " << form.getis_signed() << '\n';
 	return (stream);
 }
 

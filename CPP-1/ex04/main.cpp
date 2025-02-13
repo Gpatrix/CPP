@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 12:56:58 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/11 16:12:57 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/13 16:44:42 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ bool	get_content (std::string& content, char* filename)
 		std::cout << ERROR_OPEN_FILE << " \'" << filename << "\'\n";
 		return (EXIT_FAILURE);
 	}
-	while (!InFile.eof())
-	{
-		InFile >> std::noskipws >> c;
-		content += c;
-	}
+	// not to do {
+		while (!InFile.eof())
+		{
+			InFile >> std::noskipws >> c;
+			content += c;
+		}
+	// not to do }
 	InFile.close();
 	return (EXIT_SUCCESS);
 }

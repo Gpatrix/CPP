@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:16:49 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/13 14:43:05 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:10:41 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,21 @@ int main(void)
 	int			min_grade = 50;
 
 	std::string	bureaucrat_name("bob");
-	int			grade = 70;
+	int			grade = 40;
 
 	try
 	{
-		Form		A42(form_name, min_grade, min_grade);
-		Bureaucrat	bob(bureaucrat_name, grade);
+		Form		form(form_name, min_grade, min_grade);
+		Bureaucrat	bureaucrat(bureaucrat_name, grade);
 
-		bob.signForm(A42);
+		std::cout << form << bureaucrat;
+
+		bureaucrat.signForm(form);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
-	return 0;
+
+	return (0);
 }
