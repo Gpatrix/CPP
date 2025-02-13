@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:51 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/12 09:26:45 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/13 09:21:42 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,6 @@ int		Fixed::toInt(void) const
 float	Fixed::toFloat(void) const
 {
 	return (this->value / (float)(1 << this->bitNb));
-}
-
-int		Fixed::getRawBits(void) const
-{
-	return (this->value);
 }
 
 Fixed&	Fixed::operator=(const Fixed& fixed)
@@ -163,6 +158,11 @@ const Fixed&	Fixed::max(const Fixed& a, const Fixed& b)
 void	Fixed::setRawBits(int const raw)
 {
 	this->value = raw;
+}
+
+int		Fixed::getRawBits(void) const
+{
+	return (this->value);
 }
 
 Fixed::~Fixed() {}
