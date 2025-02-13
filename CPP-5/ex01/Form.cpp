@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:50:54 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/13 13:31:36 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/13 14:43:52 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,20 @@ Form::Form(
 Form::Form(
 	const Form& cpy_form
 ):
+	name(cpy_form.getName()),
 	minSignGrade(cpy_form.getminSignGrade()),
-	minExecGrade(cpy_form.getminExecGrade()),
-	name(cpy_form.getName())
+	minExecGrade(cpy_form.getminExecGrade())
 {
 	this->operator=(cpy_form);
 }
 
 Form&	Form::operator=(const Form& cpy_Form)
 {
+	if (this == &cpy_Form)
+		return (*this);
+	
 	this->is_signed = cpy_Form.getis_signed();
+	return (*this);
 }
 
 std::ostream&	operator<<(std::ostream& stream, const Form& form)
@@ -51,11 +55,12 @@ std::ostream&	operator<<(std::ostream& stream, const Form& form)
 	<< "\n\tmin sign sign : " << form.getminSignGrade()
 	<< "\n\tmin sign grade: " << form.getminSignGrade()
 	<< "\n\tis_signed     : " << form.getis_signed();
+	return (stream);
 }
 
 void	Form::beSigned(Bureaucrat& Bureaucrat)
 {
-	if (this->minSignGrade > Bureaucrat.getGrade())
+	if (Bureaucrat.getGrade() > this->minSignGrade)
 		throw Form::GradeTooLowException();
 
 	this->is_signed = true;
@@ -91,3 +96,5 @@ const char*	Form::GradeTooLowException::what() const throw()
 {
 	return ("Grade too low");
 }
+
+Form::~Form(void) {}

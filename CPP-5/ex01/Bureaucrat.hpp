@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:10:40 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/13 13:38:59 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/13 16:31:44 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <iostream>
 #include <exception>
 #include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -28,7 +30,6 @@ class Bureaucrat
 
 		Bureaucrat&	operator=(const Bureaucrat&);
 
-		friend std::ostream&	operator<<(std::ostream& stream, const Bureaucrat&);
 
 		void	signForm(Form&);
 
@@ -52,3 +53,5 @@ class Bureaucrat
 
 		~Bureaucrat(void);
 };
+
+std::ostream&	operator<<(std::ostream& stream, const Bureaucrat&);

@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:40 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/13 09:11:05 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/13 16:30:34 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class Fixed
 
 		Fixed&	operator=(const Fixed&);
 
-		friend std::ostream&	operator<<(std::ostream& flux, const Fixed&);
 		
 		bool operator< (const Fixed& fixed) const;
 		bool operator> (const Fixed& fixed) const;
@@ -60,3 +59,5 @@ class Fixed
 
 		~Fixed();
 };
+
+std::ostream&	operator<<(std::ostream& flux, const Fixed&);

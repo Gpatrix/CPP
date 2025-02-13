@@ -3,9 +3,9 @@ CFLAGS	= -Wall -Wextra -Werror -g3 -std=c++98
 
 RM		= rm -f
 
-NAME	= Bureaucrat
+NAME	= Form
 
-FILE	= main.cpp Bureaucrat.cpp
+FILE	= main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS	= $(FILE:%.cpp=%.o)
 

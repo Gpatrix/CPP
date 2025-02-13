@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:03:40 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/13 09:05:10 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/13 16:29:56 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,24 @@
 
 class Fixed
 {
-private:
-	int					value;
-	static const int	bitNb = 8;
-public:
-	Fixed(void);
-	Fixed(const int);
-	Fixed(const float);
-	Fixed(const Fixed&);
+	private:
+		int					value;
+		static const int	bitNb = 8;
+	public:
+		Fixed(void);
+		Fixed(const int);
+		Fixed(const float);
+		Fixed(const Fixed&);
 
-	Fixed&					operator=(const Fixed&);
-	friend std::ostream&	operator<<(std::ostream& flux, const Fixed&);
+		Fixed&					operator=(const Fixed&);
 
-	int		toInt(void) const;
-	float	toFloat(void) const;
+		int		toInt(void) const;
+		float	toFloat(void) const;
 
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
-	
-	~Fixed();
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		
+		~Fixed();
 };
+
+std::ostream&	operator<<(std::ostream& flux, const Fixed&);
