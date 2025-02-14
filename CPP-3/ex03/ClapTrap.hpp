@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 09:21:45 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 12:42:11 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/14 12:20:09 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ public:
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 
-	int		getAttackDamage(void);
+	std::string	getName(void) const;
+	int			getHitPoint(void) const;
+	int			getEnergyPoint(void) const;
+	int			getAttackDamage(void) const;
 
 	ClapTrap&	operator=(const ClapTrap&);
 	

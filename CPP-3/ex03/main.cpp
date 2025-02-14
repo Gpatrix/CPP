@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 09:13:18 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 13:25:32 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/14 12:34:43 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,14 @@
 
 int main(void)
 {
-	DiamondTrap	diamondtrap("bob");
-	ScavTrap	scavtrap("Cap'n amoraru");
-	ClapTrap	claptrap("Baptiste");
-	FragTrap	fragtrap("Alex malefique");
+	DiamondTrap	Baptiste("Baptiste");
+	DiamondTrap	Cap("Cap'n amoraru");
 
-	diamondtrap.whoAmI();
-	diamondtrap.attack("Cap'n amoraru");
-	scavtrap.takeDamage(diamondtrap.getAttackDamage());
-	claptrap.attack("Baptiste");
-	scavtrap.takeDamage(claptrap.getAttackDamage());
-	scavtrap.beRepaired(18);
-	scavtrap.guardGate();
-	fragtrap.attack("Cap'n amoraru");
-	scavtrap.takeDamage(fragtrap.getAttackDamage());
+	Baptiste.whoAmI();
+	Baptiste.attack("Cap'n amoraru");
+	Cap.takeDamage(Baptiste.getAttackDamage());
+	Cap.highFivesGuys();
+	Cap.guardGate();
 
 	return 0;
 }

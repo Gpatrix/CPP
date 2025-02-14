@@ -6,31 +6,33 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:53:45 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 13:21:20 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/14 12:29:14 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 
-DiamondTrap::DiamondTrap(void)
+DiamondTrap::DiamondTrap(void): ClapTrap("Name not define")
 {
+	FragTrap	frag;
 	std::cout << "DiamondTrap Default constructor called\n";
+
 	this->Name = "Name not define";
-	this->ClapTrap::Name = this->Name + "_clap_name";
-	this->HitPoint = this->FragTrap::HitPoint;
-	this->EnergyPoint = this->ScavTrap::EnergyPoint;
-	this->AttackDamage = this->FragTrap::AttackDamage;
+	this->HitPoint		= frag.getHitPoint();
+	this->EnergyPoint	= ScavTrap::getEnergyPoint();
+	this->AttackDamage	= frag.getAttackDamage();
 }
 
 DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name + "_clap_name")
 {
+	FragTrap	frag;
 	std::cout << "DiamondTrap Name constructor called\n";
-	this->ClapTrap::Name = Name + "_clap_name";
+
 	this->Name = Name;
-	this->HitPoint = this->FragTrap::HitPoint;
-	this->EnergyPoint = this->ScavTrap::EnergyPoint;
-	this->AttackDamage = this->FragTrap::AttackDamage;
+	this->HitPoint		= frag.getHitPoint();
+	this->EnergyPoint	= ScavTrap::getEnergyPoint();
+	this->AttackDamage	= frag.getAttackDamage();
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& copy)
