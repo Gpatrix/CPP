@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:19:33 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 12:30:11 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/14 08:48:37 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ ScavTrap::ScavTrap(void)
 	this->AttackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string Name)
+ScavTrap::ScavTrap(std::string Name): ClapTrap(Name)
 {
 	std::cout << "ScrapTrap Name constructor called\n";
-	this->Name = Name;
 	this->HitPoint = 100;
 	this->EnergyPoint = 50;
 	this->AttackDamage = 20;
@@ -55,7 +54,11 @@ void ScavTrap::guardGate(void)
 
 void	ScavTrap::attack(const std::string& target)
 {
-	if (this->EnergyPoint <= 0)
+	if (this->HitPoint <= 0)
+	{
+		std::cout << this->Name << " is dead he can't attack\n";
+	}
+	else if (this->EnergyPoint <= 0)
 	{
 		std::cout << this->Name <<
 		 " don't have enough energy to attack and he is sad\n";
