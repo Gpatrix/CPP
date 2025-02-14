@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:30:52 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/29 12:22:47 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/14 10:42:32 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ClapTrap::attack(const std::string& target)
 }
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->HitPoint <= 1)
+	if (this->HitPoint <= 0)
 	{
 		std::cout << this->Name << " is attacked even after being dead, shame\n";
 	}
