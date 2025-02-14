@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:29:31 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/14 12:23:53 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/14 12:44:48 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ FragTrap&	FragTrap::operator=(const FragTrap& assign)
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << this->Name <<" have made a high fives to himself.\n";
+	if (this->HitPoint <= 0)
+		std::cout << this->Name << " is dead he can't high fives\n";
+	else
+		std::cout << this->Name <<" have made a high fives to himself.\n";
 }
 
 FragTrap::~FragTrap()
