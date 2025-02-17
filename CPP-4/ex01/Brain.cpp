@@ -6,17 +6,21 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:03:45 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 10:03:47 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:32:16 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
 
-Brain::Brain(void) {}
+Brain::Brain(void)
+{
+	std::cout << "Brain default constructor\n";
+}
 
 Brain::Brain(const Brain& copy)
 {
+	std::cout << "Brain copy constructor\n";
 	if (this != &copy)
 		this->operator=(copy);
 }
@@ -31,4 +35,7 @@ Brain&	Brain::operator=(const Brain& assign)
 	return (*this);
 }
 
-Brain::~Brain(void) {}
+Brain::~Brain(void)
+{
+	std::cout << "Brain destructor\n";
+}
