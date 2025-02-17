@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:16:49 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/17 10:50:30 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:55:54 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void)
 		Bureaucrat				bureaucrat(bureaucrat_name, grade);
 		std::cout << Form << bureaucrat;
 
-		// bureaucrat.signForm(form);
+		bureaucrat.signForm(Form);
 	}
 	catch(const std::exception& e)
 	{
