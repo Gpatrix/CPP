@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:51:08 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/14 12:40:42 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 09:09:15 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ public:
 	DiamondTrap&	operator=(const DiamondTrap&);
 
 	using	ScavTrap::attack;
-	using	FragTrap::highFivesGuys;
 
 	void whoAmI(void);
 

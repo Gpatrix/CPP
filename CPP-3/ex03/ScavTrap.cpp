@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:19:33 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/14 11:49:09 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 09:06:51 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,14 @@ void ScavTrap::guardGate(void)
 
 void	ScavTrap::attack(const std::string& target)
 {
-	if (this->EnergyPoint <= 0)
+	if (this->HitPoint <= 0)
+	{
+		std::cout << this->Name << " is dead he can't attack any more\n";
+	}
+	else if (this->EnergyPoint <= 0)
 	{
 		std::cout << this->Name <<
-		 " don't have enough energy to attack and he is sad\n";
+		 " don't have enough energy to attack and he very is sad\n";
 	}
 	else
 	{
