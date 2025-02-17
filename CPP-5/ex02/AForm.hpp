@@ -33,7 +33,7 @@ class AForm
 		AForm&	operator=(const AForm&);
 
 		void					beSigned(Bureaucrat&);
-		virtual void			execute(const Bureaucrat&) = 0;
+		virtual void			execute(const Bureaucrat&) const = 0;
 
 		std::string	getName(void) const;
 		int			getminSignGrade(void) const;

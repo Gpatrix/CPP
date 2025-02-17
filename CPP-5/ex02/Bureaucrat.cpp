@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:10:59 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/17 10:45:19 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 11:05:06 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,21 @@ void	Bureaucrat::signForm(AForm& form)
 		std::cout << this->name << " couldn’t sign " << form.getName()
 		<< " because " << e.what() << '\n';
 	}
+}
+
+void	Bureaucrat::executeForm(AForm const & form) const
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	
 }
+
 
 void	Bureaucrat::incrementGrade(void)
 {

@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:46:01 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/17 10:56:37 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 11:05:50 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
-void	ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat)
+void	ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat) const
 {
 	if (bureaucrat.getGrade() < this->getminExecGrade())
 		throw ExecTooLowException();

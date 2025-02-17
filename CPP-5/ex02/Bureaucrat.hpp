@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:10:40 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/14 13:23:33 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 11:03:29 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Bureaucrat
 
 
 		void	signForm(AForm&);
+		void	executeForm(AForm const & form) const;
 
 		void	incrementGrade(void);
 		void	decrementGrade(void);
