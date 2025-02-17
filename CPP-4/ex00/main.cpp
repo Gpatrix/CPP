@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:09:14 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 10:09:59 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:32:06 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 	const WrongAnimal*	wrongcat = new WrongCat();
 	const Animal*	meta = new Animal();
 	const Animal*	dog  = new Dog();
-	const Cat		cat;
+	const Animal*	cat  = new Cat();
 
 	std::cout << wrongcat->getType() << '\n';
 	wrongcat->makeSound();
@@ -33,12 +33,13 @@ int main(void)
 	std::cout << dog->getType() << '\n';
 	dog->makeSound();
 
-	std::cout << cat.getType() << '\n';
-	cat.makeSound();
+	std::cout << cat->getType() << '\n';
+	cat->makeSound();
 
 
 	delete wrongcat;
 	delete meta;
 	delete dog;
+	delete cat;
 	return 0;
 }
