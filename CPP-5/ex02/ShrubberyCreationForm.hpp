@@ -6,11 +6,12 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:39:06 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/14 15:36:32 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 09:47:36 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <fstream>
 #include "AForm.hpp"
 
 #define ASCII_TREE \
@@ -63,10 +64,23 @@ class ShrubberyCreationForm: public AForm
 		const std::string target;
 
 	public:
+		ShrubberyCreationForm(void);
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm&);
 
 		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm&);
+
+		void	execute(const Bureaucrat&);
+
+		class CreateFileException: public std::exception
+		{
+			private:
+				std::string _target;
+
+			public:
+				CreateFileException(const std::string target);
+				const char* what() const throw();
+		};
 
 		~ShrubberyCreationForm(void);
 };

@@ -32,8 +32,8 @@ class AForm
 
 		AForm&	operator=(const AForm&);
 
-		virtual void	beSigned(Bureaucrat&) = 0;
-		void			execute(const Bureaucrat&);
+		void					beSigned(Bureaucrat&);
+		virtual void			execute(const Bureaucrat&) = 0;
 
 		std::string	getName(void) const;
 		int			getminSignGrade(void) const;
@@ -47,6 +47,12 @@ class AForm
 		};
 		
 		class GradeTooLowException: public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+
+		class ExecTooLowException: public std::exception
 		{
 			public:
 				const char* what() const throw();
