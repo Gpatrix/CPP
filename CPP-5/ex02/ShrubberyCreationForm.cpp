@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:46:01 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/17 13:43:10 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 13:45:43 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void	ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat) const
 {
-	if (bureaucrat.getGrade() < this->getminExecGrade())
+	if (bureaucrat.getGrade() > this->getminExecGrade())
 		throw ExecTooLowException();
 	if (this->getis_signed() == false)
 		throw AFormNotSignedException(this->getName());
