@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:46:01 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/17 11:05:50 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 13:43:10 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat) const
 {
 	if (bureaucrat.getGrade() < this->getminExecGrade())
 		throw ExecTooLowException();
+	if (this->getis_signed() == false)
+		throw AFormNotSignedException(this->getName());
 
 	std::ofstream OutFile;
 
@@ -46,13 +48,14 @@ void	ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat) const
 	OutFile.close();
 }
 
-ShrubberyCreationForm::CreateFileException::CreateFileException(const std::string target) 
-: _target(target) {}
+ShrubberyCreationForm::CreateFileException::CreateFileException(const std::string message) 
+: _message(message) {}
+
 
 const char*	ShrubberyCreationForm::CreateFileException::what() const throw()
 {
-	this->_target = "failed to create/open " + this->_target + "_shrubbery";
-	return (this->_target.c_str());
+	this->_message = "failed to create/open " + this->_message + "_shrubbery";
+	return (this->_message.c_str());
 }
 
 ShrubberyCreationForm::CreateFileException::~CreateFileException(void) throw()

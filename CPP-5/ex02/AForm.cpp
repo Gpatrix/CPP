@@ -102,4 +102,16 @@ const char*	AForm::ExecTooLowException::what() const throw()
 	return ("Exec grade too low");
 }
 
+AForm::AFormNotSignedException::AFormNotSignedException(const std::string message) 
+: _message(message) {}
+
+const char*	AForm::AFormNotSignedException::what() const throw()
+{
+	return ("Form not signed");
+}
+
+AForm::AFormNotSignedException::~AFormNotSignedException(void) throw()
+{}
+
+
 AForm::~AForm(void) {}

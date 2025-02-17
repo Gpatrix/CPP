@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:39:06 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/17 11:05:41 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 13:43:07 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ class ShrubberyCreationForm: public AForm
 		class CreateFileException: public std::exception
 		{
 			private:
-				mutable std::string _target;
+				mutable std::string _message;
 
 			public:
-				CreateFileException(const std::string target);
+				CreateFileException(const std::string message);
 				const char* what() const throw();
 				~CreateFileException(void) throw();
 		};

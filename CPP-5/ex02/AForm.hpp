@@ -58,6 +58,17 @@ class AForm
 				const char* what() const throw();
 		};
 
+		class AFormNotSignedException: public std::exception
+		{
+			private:
+				mutable std::string _message;
+
+			public:
+				AFormNotSignedException(const std::string message);
+				const char* what() const throw();
+				~AFormNotSignedException(void) throw();
+		};
+
 		~AForm(void);
 };
 
