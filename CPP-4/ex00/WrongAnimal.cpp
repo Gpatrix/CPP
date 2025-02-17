@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:15:46 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 10:09:09 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:37:14 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 WrongAnimal::WrongAnimal(void)
 {
+	std::cout << "WrongAnimal constructor\n";
 	this->type = "Unknow";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& copy)
 {
+	std::cout << "WrongAnimal copy constructor\n";
 	if (this != &copy)
 		this->operator=(copy);
 }
@@ -42,4 +44,7 @@ void WrongAnimal::makeSound(void) const
 	std::cout << "[Unknown WrongAnimal] hhhhh..." << '\n';
 }
 
-WrongAnimal::~WrongAnimal() {}
+WrongAnimal::~WrongAnimal()
+{
+	std::cout << "WrongAnimal destructor\n";
+}
