@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:37:03 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 11:01:00 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:43:40 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 Cat::Cat(void): Animal("Cat")
 {
+	std::cout << "Cat constructor\n";
 	brain = new Brain();
 }
 
 Cat::Cat(const Cat& copy): Animal("Cat")
 {
+	std::cout << "Cat copy constructor\n";
 	brain = new Brain(*copy.brain);
 }
 

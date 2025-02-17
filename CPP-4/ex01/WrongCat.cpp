@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:37:03 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 10:09:11 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:22:32 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 WrongCat::WrongCat(void)
 {
+	std::cout << "WrongCat constructor\n";
 	this->type = "Cat";
 }
 
 WrongCat::WrongCat(const WrongCat& copy)
 {
+	std::cout << "WrongCat copy constructor\n";
 	if (this != &copy)
 		this->operator=(copy);
 }
@@ -34,7 +36,10 @@ WrongCat&	WrongCat::operator=(const WrongCat& assign)
 
 void WrongCat::makeSound(void) const
 {
-	std::cout << "miaou" << '\n';
+	std::cout << "MIAOUUUUUUUUUUUUUUUUUUUUU" << '\n';
 }
 
-WrongCat::~WrongCat() {}
+WrongCat::~WrongCat()
+{
+	std::cout << "WrongCat destructeur\n";
+}
