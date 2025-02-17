@@ -24,9 +24,9 @@ AForm::AForm(
 	minExecGrade(cpy_minExecGrade),
 	is_signed(false)
 {
-	if (minExecGrade <= 1 || minExecGrade <= 1)
+	if (minExecGrade < 1 || minExecGrade < 1)
 		throw AForm::GradeTooHighException();
-	if (minExecGrade >= 150 || minExecGrade >= 150)
+	if (minExecGrade > 150 || minExecGrade > 150)
 		throw AForm::GradeTooLowException();
 }
 
@@ -49,12 +49,12 @@ AForm&	AForm::operator=(const AForm& cpy_Form)
 	return (*this);
 }
 
-std::ostream&	operator<<(std::ostream& stream, const AForm& form)
+std::ostream&	operator<<(std::ostream& stream, const AForm& Aform)
 {
-	stream << form.getName() << ", AForm"
-	<< "\n\tmin sign sign : " << form.getminSignGrade()
-	<< "\n\tmin sign grade: " << form.getminSignGrade()
-	<< "\n\tis_signed     : " << form.getis_signed() << '\n';
+	stream << Aform.getName() << ", AForm"
+	<< "\n\tmin sign grade : " << Aform.getminSignGrade()
+	<< "\n\tmin Exec grade : " << Aform.getminExecGrade()
+	<< "\n\tis_signed      : " << Aform.getis_signed() << '\n';
 	return (stream);
 }
 

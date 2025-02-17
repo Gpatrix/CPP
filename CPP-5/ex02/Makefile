@@ -3,9 +3,9 @@ CFLAGS	= -Wall -Wextra -Werror -g3 -std=c++98
 
 RM		= rm -f
 
-NAME	= Form
+NAME	= AForm
 
-FILE	= main.cpp Bureaucrat.cpp AForm.cpp
+FILE	= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 
 OBJS	= $(FILE:%.cpp=%.o)
 

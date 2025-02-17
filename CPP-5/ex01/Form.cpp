@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:50:54 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/13 16:54:02 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:53:05 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ Form&	Form::operator=(const Form& cpy_Form)
 
 std::ostream&	operator<<(std::ostream& stream, const Form& form)
 {
-	stream << form.getName() << ", Form"
-	<< "\n\tmin sign sign : " << form.getminSignGrade()
-	<< "\n\tmin sign grade: " << form.getminSignGrade()
-	<< "\n\tis_signed     : " << form.getis_signed() << '\n';
+	stream << form.getName() << ", AForm"
+	<< "\n\tmin sign grade : " << form.getminSignGrade()
+	<< "\n\tmin Exec grade : " << form.getminExecGrade()
+	<< "\n\tis_signed      : " << form.getis_signed() << '\n';
 	return (stream);
 }
 

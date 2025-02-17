@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:16:49 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/14 15:44:59 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:50:30 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,14 @@
 
 int main(void)
 {
-	// std::string	form_name("A42");
-	// int			min_grade = 50;
-
 	std::string	bureaucrat_name("bob");
 	int			grade = 40;
 
 	try
 	{
-		ShrubberyCreationForm	A24;
-		Bureaucrat	bureaucrat(bureaucrat_name, grade);
-		// std::cout << form << bureaucrat;
+		ShrubberyCreationForm	Form("home");
+		Bureaucrat				bureaucrat(bureaucrat_name, grade);
+		std::cout << Form << bureaucrat;
 
 		// bureaucrat.signForm(form);
 	}

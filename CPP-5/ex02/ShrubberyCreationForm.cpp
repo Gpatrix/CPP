@@ -6,18 +6,18 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:46:01 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/17 09:50:29 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:44:20 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(void):
-	target("nowhere"), AForm("ShrubberyCreationForm", 1, 1)
+	AForm("ShrubberyCreationForm", 1, 1), target("nowhere")
 {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target):
-	target(target), AForm("ShrubberyCreationForm", 145, 137)
+	AForm("ShrubberyCreationForm", 145, 137), target(target)
 {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy)
@@ -26,6 +26,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy)
 
 ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationForm& copy)
 {
+	(void)copy;
 	return (*this);
 }
 
@@ -36,7 +37,7 @@ void	ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat)
 
 	std::ofstream OutFile;
 
-	OutFile.open(this->target + "_shrubbery", std::ofstream::trunc | std::ifstream::out);
+	OutFile.open((this->target + "_shrubbery").c_str(), std::ofstream::trunc | std::ifstream::out);
 
 	if (!OutFile.is_open())
 		throw CreateFileException(target);
@@ -50,7 +51,11 @@ ShrubberyCreationForm::CreateFileException::CreateFileException(const std::strin
 
 const char*	ShrubberyCreationForm::CreateFileException::what() const throw()
 {
-	return (("failed to create/open " + this->_target + "_shrubbery").c_str());
+	this->_target = "failed to create/open " + this->_target + "_shrubbery";
+	return (this->_target.c_str());
 }
+
+ShrubberyCreationForm::CreateFileException::~CreateFileException(void) throw()
+{}
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
