@@ -5,7 +5,7 @@ RM		= rm -f
 
 NAME	= AForm
 
-FILE	= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+FILE	= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 
 OBJS	= $(FILE:%.cpp=%.o)
 

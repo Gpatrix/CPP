@@ -37,7 +37,13 @@ void	RobotomyRequestForm::execute(const Bureaucrat& bureaucrat) const
 	if (this->getis_signed() == false)
 		throw AFormNotSignedException(this->getName());
 
-	
+	std::cout << "Drill sounds intensify\n";
+
+	std::srand(std::time(NULL));
+	if (std::rand() % 2)
+		std::cout << bureaucrat.getName() << " has been robotomized\n";
+	else
+		std::cout << "the robotomy of " << bureaucrat.getName() << " failed\n";
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(void) {}

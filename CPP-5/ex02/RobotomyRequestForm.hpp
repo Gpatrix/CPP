@@ -6,12 +6,14 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:39:06 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/17 14:39:53 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/18 09:27:34 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+#include <ctime>
+#include <cstdlib>
 #include "AForm.hpp"
 
 class RobotomyRequestForm: public AForm
