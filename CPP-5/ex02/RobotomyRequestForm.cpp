@@ -41,9 +41,9 @@ void	RobotomyRequestForm::execute(const Bureaucrat& bureaucrat) const
 
 	std::srand(std::time(NULL));
 	if (std::rand() % 2)
-		std::cout << bureaucrat.getName() << " has been robotomized\n";
+		std::cout << this->target << " has been robotomized\n";
 	else
-		std::cout << "the robotomy of " << bureaucrat.getName() << " failed\n";
+		std::cout << "the robotomy of " << this->target << " failed\n";
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(void) {}

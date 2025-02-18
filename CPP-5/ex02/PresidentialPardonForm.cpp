@@ -37,7 +37,7 @@ void	PresidentialPardonForm::execute(const Bureaucrat& bureaucrat) const
 	if (this->getis_signed() == false)
 		throw AFormNotSignedException(this->getName());
 
-	std::cout << bureaucrat.getName() << " has been pardoned by Zaphod Beeblebrox\n";
+	std::cout << this->target << " has been pardoned by Zaphod Beeblebrox\n";
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void) {}
