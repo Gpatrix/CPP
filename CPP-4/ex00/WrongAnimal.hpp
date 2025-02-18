@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:10:35 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/01/30 09:38:47 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/18 08:38:16 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ public:
 
 	void makeSound(void) const;
 
-	virtual ~WrongAnimal(void);
+	~WrongAnimal(void);
 };
