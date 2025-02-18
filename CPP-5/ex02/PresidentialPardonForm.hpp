@@ -13,9 +13,6 @@
 #pragma once
 
 #include <iostream>
-#include <fstream>
-#include <ctime>
-#include <cstdlib>
 #include "AForm.hpp"
 
 class PresidentialPardonForm: public AForm

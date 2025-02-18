@@ -6,14 +6,13 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:39:06 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/18 11:29:05 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/18 11:32:09 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <fstream>
 #include <ctime>
 #include <cstdlib>
 #include "AForm.hpp"
