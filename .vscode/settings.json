@@ -75,7 +75,8 @@
 		"__node_handle": "cpp",
 		"__tuple": "cpp",
 		"ios": "cpp",
-		"__locale": "cpp"
+		"__locale": "cpp",
+		"target": "cpp"
 	},
 	"[cpp]": {
 		"editor.suggest.insertMode": "insert"
