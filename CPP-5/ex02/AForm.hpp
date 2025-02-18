@@ -52,12 +52,6 @@ class AForm
 				const char* what() const throw();
 		};
 
-		class ExecTooLowException: public std::exception
-		{
-			public:
-				const char* what() const throw();
-		};
-
 		class AFormNotSignedException: public std::exception
 		{
 			private:

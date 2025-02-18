@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.cpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,40 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(void):
-	AForm("RobotomyRequestForm", 72, 45), target("nowhere")
+PresidentialPardonForm::PresidentialPardonForm(void):
+	AForm("PresidentialPardonForm", 25, 5), target("nowhere")
 {}
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target):
-	AForm("RobotomyRequestForm", 72, 45), target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target):
+	AForm("PresidentialPardonForm", 25, 5), target(target)
 {}
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& copy)
 	: AForm(copy.getName(), copy.getminSignGrade(), copy.getminExecGrade())
 {}
 
-RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm& copy)
+PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPardonForm& copy)
 {
 	(void)copy;
 	return (*this);
 }
 
-void	RobotomyRequestForm::execute(const Bureaucrat& bureaucrat) const
+void	PresidentialPardonForm::execute(const Bureaucrat& bureaucrat) const
 {
 	if (bureaucrat.getGrade() > this->getminExecGrade())
 		throw GradeTooLowException();
 	if (this->getis_signed() == false)
 		throw AFormNotSignedException(this->getName());
 
-	std::cout << "Drill sounds intensify\n";
-
-	std::srand(std::time(NULL));
-	if (std::rand() % 2)
-		std::cout << bureaucrat.getName() << " has been robotomized\n";
-	else
-		std::cout << "the robotomy of " << bureaucrat.getName() << " failed\n";
+	std::cout << bureaucrat.getName() << " has been pardoned by Zaphod Beeblebrox\n";
 }
 
-RobotomyRequestForm::~RobotomyRequestForm(void) {}
+PresidentialPardonForm::~PresidentialPardonForm(void) {}
