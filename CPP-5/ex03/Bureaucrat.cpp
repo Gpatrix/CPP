@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:10:59 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/17 13:51:27 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:25:16 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Bureaucrat::Bureaucrat(void): name("anonymous"), grade(150) {}
 
-Bureaucrat::Bureaucrat(std::string& new_name, int& new_grade):  name(new_name)
+Bureaucrat::Bureaucrat(std::string new_name, int new_grade):  name(new_name)
 {
 	if (new_grade < 1)
 		throw Bureaucrat::GradeTooHighException();

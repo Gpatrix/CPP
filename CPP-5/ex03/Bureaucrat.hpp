@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:10:40 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/17 11:03:29 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:25:20 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Bureaucrat
 
 	public:
 		Bureaucrat(void);
-		Bureaucrat(std::string& new_name, int& new_grade);
+		Bureaucrat(std::string new_name, int new_grade);
 		Bureaucrat(const Bureaucrat&);
 
 		Bureaucrat&	operator=(const Bureaucrat&);
