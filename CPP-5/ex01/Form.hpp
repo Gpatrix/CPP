@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:53:50 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/13 16:32:09 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/19 08:55:33 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Form
 
 	public:
 		Form(void);
-		Form(std::string&, int&, int&);
+		Form(std::string, int, int);
 		Form(const Form&);
 
 		Form&	operator=(const Form&);

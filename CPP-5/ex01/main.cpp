@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:16:49 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/13 17:10:41 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:00:49 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void)
 	int			min_grade = 50;
 
 	std::string	bureaucrat_name("bob");
-	int			grade = 40;
+	int			grade = 55;
 
 	try
 	{
