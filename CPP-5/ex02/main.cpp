@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:16:49 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/19 09:13:12 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:34:32 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,22 @@ int main(void)
 
 	try
 	{
-		PresidentialPardonForm	Form("home");
+		ShrubberyCreationForm	Shrubbery("home");
+		PresidentialPardonForm	Presidential("home");
+		RobotomyRequestForm		Robotomy("home");
 		Bureaucrat				bureaucrat(bureaucrat_name, grade);
-		std::cout << Form << bureaucrat;
 
-		bureaucrat.signForm(Form);
-		bureaucrat.executeForm(Form);
+		std::cout << Shrubbery << bureaucrat;
+		bureaucrat.signForm(Shrubbery);
+		bureaucrat.executeForm(Shrubbery);
+
+		std::cout << '\n' << Presidential << bureaucrat;
+		bureaucrat.signForm(Presidential);
+		bureaucrat.executeForm(Presidential);
+
+		std::cout << '\n' << Robotomy << bureaucrat;
+		bureaucrat.signForm(Robotomy);
+		bureaucrat.executeForm(Robotomy);
 	}
 	catch(const std::exception& e)
 	{
