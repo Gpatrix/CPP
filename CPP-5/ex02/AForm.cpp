@@ -89,12 +89,12 @@ int	AForm::getis_signed(void) const
 
 const char*	AForm::GradeTooHighException::what() const throw()
 {
-	return ("Grade too high");
+	return ("AForm Grade too high");
 }
 
 const char*	AForm::GradeTooLowException::what() const throw()
 {
-	return ("Grade too low");
+	return ("AForm Grade too low");
 }
 
 AForm::AFormNotSignedException::AFormNotSignedException(const std::string message) 
@@ -102,7 +102,8 @@ AForm::AFormNotSignedException::AFormNotSignedException(const std::string messag
 
 const char*	AForm::AFormNotSignedException::what() const throw()
 {
-	return ("Form not signed");
+	this->_message += " is not signed";
+	return (this->_message.c_str());
 }
 
 AForm::AFormNotSignedException::~AFormNotSignedException(void) throw()

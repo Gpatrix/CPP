@@ -102,7 +102,8 @@ AForm::AFormNotSignedException::AFormNotSignedException(const std::string messag
 
 const char*	AForm::AFormNotSignedException::what() const throw()
 {
-	return ("Form not signed");
+	this->_message += " is not signed";
+	return (this->_message.c_str());
 }
 
 AForm::AFormNotSignedException::~AFormNotSignedException(void) throw()
