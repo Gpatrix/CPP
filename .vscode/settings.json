@@ -76,7 +76,9 @@
 		"__tuple": "cpp",
 		"ios": "cpp",
 		"__locale": "cpp",
-		"target": "cpp"
+		"target": "cpp",
+		"queue": "cpp",
+		"stack": "cpp"
 	},
 	"[cpp]": {
 		"editor.suggest.insertMode": "insert"
