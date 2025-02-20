@@ -1,7 +1,7 @@
 #include "ScalarConverter.hpp"
 
-int main(void)
+int main(int, char **argv)
 {
-	ScalarConverter::convert("2.50");
+	ScalarConverter::convert(argv[1]); // TODO test only
 	return (0);
 }
