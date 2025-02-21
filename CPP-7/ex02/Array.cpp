@@ -1,7 +1,18 @@
 #include "Array.hpp"
 
+
+
 template <typename T>
-Array<T>::Array(void): Array(NULL) {}
+size_t	Array<T>::size(void) const
+{
+	if (!this->_Array)
+		return (0);
+	else
+		return (sizeof(this->_Array)/sizeof(this->_Array[0]));
+}
+
+template <typename T>
+Array<T>::Array(void): _Array(NULL) {}
 
 template <typename T>
 Array<T>::Array(unsigned int n)
@@ -29,7 +40,7 @@ Array<T>&	Array<T>::operator=(const Array& copy)
 		return (*this);
 	}
 
-	size_t	size = sizeof(copy._Array)/sizeof(copy._Array[0]);
+	size_t	size = copy.size();
 
 	for (size_t i = 0; i < size; i++)
 	{
@@ -39,8 +50,16 @@ Array<T>&	Array<T>::operator=(const Array& copy)
 }
 
 
+template <typename T>
+T&	Array<T>::operator[](int idx) const
+{
+	if (idx < 0 || idx >= this->size())
+		throw this->OutOfBoundsexeption();
+	return (this->_Array[idx]);
+}
 
-// const char* Array::OutOfBoundsexeption::what() const throw()
-// {
-	
-// }
+template <typename T>
+const char* Array<T>::OutOfBoundsexeption::what() const throw()
+{
+	return ("Out of bound");
+}

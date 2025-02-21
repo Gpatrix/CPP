@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include <cstdint>
+#include <stdint.h>
 #include <exception>
 
 template <typename T>
@@ -18,7 +18,8 @@ class Array
 		Array&	operator=(const Array&);
 
 		T&	operator[](int idx) const;
-		T	operator[](int idx) const;
+
+		size_t	size(void) const;
 
 		class OutOfBoundsexeption: public std::exception
 		{
