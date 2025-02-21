@@ -1,9 +1,8 @@
 #include <iostream>
+#include "Array.hpp"
 
 int main(void)
 {
-	int test[4];
-
-	std::cout << sizeof(test)/sizeof(test[0]);
+	Array<int> new_array;
 	return (0);
 }

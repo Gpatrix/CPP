@@ -14,6 +14,7 @@ class Array
 		Array(void);
 		Array(unsigned int n);
 		Array(const Array&);
+		~Array(void);
 
 		Array&	operator=(const Array&);
 

@@ -78,7 +78,9 @@
 		"__locale": "cpp",
 		"target": "cpp",
 		"queue": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"__functional_base": "cpp",
+		"__memory": "cpp"
 	},
 	"[cpp]": {
 		"editor.suggest.insertMode": "insert"

@@ -1,7 +1,5 @@
 #include "Array.hpp"
 
-
-
 template <typename T>
 size_t	Array<T>::size(void) const
 {
@@ -40,7 +38,14 @@ Array<T>&	Array<T>::operator=(const Array& copy)
 		return (*this);
 	}
 
+	delete this->_Array;
+
 	size_t	size = copy.size();
+
+	if (size > 0)
+		this->_Array = new T[size];
+	else
+		this->_Array = NULL;
 
 	for (size_t i = 0; i < size; i++)
 	{
@@ -62,4 +67,13 @@ template <typename T>
 const char* Array<T>::OutOfBoundsexeption::what() const throw()
 {
 	return ("Out of bound");
+}
+
+template <typename T>
+Array<T>::~Array(void)
+{
+	if (this->_Array)
+	{
+		delete[] this->_Array;
+	}
 }
