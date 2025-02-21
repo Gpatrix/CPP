@@ -7,13 +7,38 @@ template <typename T>
 Array<T>::Array(unsigned int n)
 {
 	if (n > 0)
-		Array = new T[n];
+		this->_Array = new T[n];
 	else
-		Array = NULL;
+		this->_Array = NULL;
 }
-// Array::Array(const Array&);
+template <typename T>
+Array<T>::Array(const Array<T>& copy)
+{
+	this->operator=(copy);
+}
 
-// Array&	Array::operator=(const Array&);
+template <typename T>
+Array<T>&	Array<T>::operator=(const Array& copy)
+{
+	if (*this == copy)
+		return (*this);
+	
+	if (!copy._Array)
+	{
+		this->_Array = NULL;
+		return (*this);
+	}
+
+	size_t	size = sizeof(copy._Array)/sizeof(copy._Array[0]);
+
+	for (size_t i = 0; i < size; i++)
+	{
+		this->_Array[i] = copy._Array[i];
+	}
+	return (*this);
+}
+
+
 
 // const char* Array::OutOfBoundsexeption::what() const throw()
 // {
