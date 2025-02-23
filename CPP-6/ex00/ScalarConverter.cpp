@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 14:51:56 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/23 15:58:53 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:04:26 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ScalarConverter::ScalarConverter(const ScalarConverter&) {}
 
 ScalarConverter::~ScalarConverter(void) {}
 
-static void	char_display(long& nb, char* end, std::string& str)
+static void	char_display(double& nb, char* end, std::string& str)
 {
 	std::cout << "char: ";
 	if (end == str.c_str() || nb < CHAR_MIN || CHAR_MAX < nb)
@@ -27,11 +27,10 @@ static void	char_display(long& nb, char* end, std::string& str)
 		std::cout << NON_DISPLAYABLE;
 	else
 		std::cout << '\'' << static_cast<char>(nb) << '\'';
-
 	std::cout << '\n';
 }
 
-static void	int_display(long& nb, char* end, std::string& str)
+static void	int_display(double& nb, char* end, std::string& str)
 {
 	std::cout << "int: ";
 	if (end == str.c_str() || nb < INT_MIN || INT_MAX < nb)
@@ -58,7 +57,7 @@ static void	double_display(double& nb, char* end, std::string& str)
 	std::cout << "double: ";
 	if (end == str.c_str() && !std::isinf(nb))
 		std::cout << IMPOSSIBLE;
-	else if (nb == ceil(nb)  && !std::isinf(nb))
+	else if (nb == ceil(nb) && !std::isinf(nb))
 		std::cout << std::fixed << std::setprecision(0) << nb << ".0";
 	else
 		std::cout << nb;
@@ -68,15 +67,12 @@ static void	double_display(double& nb, char* end, std::string& str)
 void	ScalarConverter::convert(std::string str)
 {
 	char				*end;
-	double				d;
-	long				l;
 
-	d = strtod(str.c_str(), &end);
-	l = static_cast<long>(d);
+	double d = strtod(str.c_str(), &end);
 
-	char_display(l, end, str);
+	char_display(d, end, str);
 
-	int_display(l, end, str);
+	int_display(d, end, str);
 
 	float_display(d, end, str);
 
