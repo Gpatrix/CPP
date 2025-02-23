@@ -1,7 +1,7 @@
 #include "Array.hpp"
 
 template <typename T>
-size_t	Array<T>::size(void) const
+unsigned int	Array<T>::size(void) const
 {
 	if (!this->_Array)
 		return (0);
@@ -31,7 +31,7 @@ Array<T>&	Array<T>::operator=(const Array& copy)
 {
 	if (*this == copy)
 		return (*this);
-	
+
 	if (!copy._Array)
 	{
 		this->_Array = NULL;
@@ -56,10 +56,10 @@ Array<T>&	Array<T>::operator=(const Array& copy)
 
 
 template <typename T>
-T&	Array<T>::operator[](int idx) const
+T&	Array<T>::operator[](unsigned int idx) const
 {
 	if (idx < 0 || idx >= this->size())
-		throw this->OutOfBoundsexeption();
+		throw OutOfBoundsexeption();
 	return (this->_Array[idx]);
 }
 

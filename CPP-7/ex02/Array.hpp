@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <exception>
 
+
 template <typename T>
 class Array
 {
@@ -18,9 +19,10 @@ class Array
 
 		Array&	operator=(const Array&);
 
-		T&	operator[](int idx) const;
+		T	operator[](unsigned int idx);
+		T&	operator[](unsigned int idx) const;
 
-		size_t	size(void) const;
+		unsigned int	size(void) const;
 
 		class OutOfBoundsexeption: public std::exception
 		{
