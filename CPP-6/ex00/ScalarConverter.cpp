@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 14:51:56 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/23 15:52:26 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/23 15:58:53 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ static void	int_display(long& nb, char* end, std::string& str)
 static void	float_display(double& nb, char* end, std::string& str)
 {
 	std::cout << "float: ";
-	if (end == str.c_str() || nb < -FLT_MAX || FLT_MAX < nb)
+	if (end == str.c_str() || ((nb < FLT_MIN || FLT_MAX < nb) && !std::isinf(nb)))
 		std::cout << IMPOSSIBLE;
-	else if (static_cast<float>(nb) == ceilf(static_cast<float>(nb)))
+	else if (static_cast<float>(nb) == ceilf(static_cast<float>(nb)) && !std::isinf(nb))
 		std::cout << std::fixed << std::setprecision(0) << static_cast<float>(nb) << ".0f";
 	else
 		std::cout << static_cast<float>(nb) << "f";
@@ -56,9 +56,9 @@ static void	float_display(double& nb, char* end, std::string& str)
 static void	double_display(double& nb, char* end, std::string& str)
 {
 	std::cout << "double: ";
-	if (end == str.c_str())
+	if (end == str.c_str() && !std::isinf(nb))
 		std::cout << IMPOSSIBLE;
-	else if (nb == ceil(nb))
+	else if (nb == ceil(nb)  && !std::isinf(nb))
 		std::cout << std::fixed << std::setprecision(0) << nb << ".0";
 	else
 		std::cout << nb;
