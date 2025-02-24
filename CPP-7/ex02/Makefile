@@ -1,11 +1,11 @@
 CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -g -std=c++98
+CFLAGS	= -Wall -Wextra -Werror -g3 -std=c++98
 
 RM		= rm -f
 
 NAME	= Array
 
-FILE	= main.cpp Array.cpp
+FILE	= main.cpp
 
 OBJS	= $(FILE:%.cpp=%.o)
 

@@ -3,13 +3,14 @@
 #include <iostream>
 #include <stdint.h>
 #include <exception>
-
+#include  <cstring>
 
 template <typename T>
 class Array
 {
 	private:
-		T*	_Array;
+		T*				_Array;
+		unsigned int	_size;
 
 	public:
 		Array(void);
@@ -22,11 +23,11 @@ class Array
 		T	operator[](unsigned int idx);
 		T&	operator[](unsigned int idx) const;
 
-		unsigned int	size(void) const;
-
 		class OutOfBoundsexeption: public std::exception
 		{
 			public:
 				const char* what() const throw();
 		};
 };
+
+#include "Array.cpp"

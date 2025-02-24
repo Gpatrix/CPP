@@ -1,10 +1,11 @@
 #include <iostream>
+#include <vector>
 #include "Array.hpp"
 
 int main(void)
 {
-	// essai de fair crash avec la division du sizeof
-	// regarde pour metre la tail en varaible
-	Array<int> new_array;
+	Array<int> new_array(5);
+	std::cout << new_array[0];
 	return (0);
+
 }

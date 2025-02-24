@@ -1,24 +1,22 @@
 #include "Array.hpp"
 
 template <typename T>
-unsigned int	Array<T>::size(void) const
-{
-	if (!this->_Array)
-		return (0);
-	else
-		return (sizeof(this->_Array)/sizeof(this->_Array[0]));
-}
-
-template <typename T>
-Array<T>::Array(void): _Array(NULL) {}
+Array<T>::Array(void): _Array(NULL), _size(0) {}
 
 template <typename T>
 Array<T>::Array(unsigned int n)
 {
 	if (n > 0)
+	{
 		this->_Array = new T[n];
+		this->_size  = n;
+		memset(this->_Array, 0, n * sizeof(T));
+	}
 	else
+	{
 		this->_Array = NULL;
+		this->_size  = 0;
+	}
 }
 template <typename T>
 Array<T>::Array(const Array<T>& copy)
@@ -35,30 +33,35 @@ Array<T>&	Array<T>::operator=(const Array& copy)
 	if (!copy._Array)
 	{
 		this->_Array = NULL;
+		this->_size  = 0;
 		return (*this);
 	}
 
-	delete this->_Array;
+	if (this->_Array)
+		delete this->_Array;
 
-	size_t	size = copy.size();
-
-	if (size > 0)
-		this->_Array = new T[size];
-	else
-		this->_Array = NULL;
-
-	for (size_t i = 0; i < size; i++)
+	this->_Array = new T[copy._size];
+	this->_size  = copy._size;
+	for (unsigned int	i = 0; i < copy._size; i++)
 	{
 		this->_Array[i] = copy._Array[i];
 	}
+
 	return (*this);
 }
 
+template <typename T>
+T	Array<T>::operator[](unsigned int idx)
+{
+	if (idx >= this->_size)
+		throw OutOfBoundsexeption();
+	return (this->_Array[idx]);
+}
 
 template <typename T>
 T&	Array<T>::operator[](unsigned int idx) const
 {
-	if (idx < 0 || idx >= this->size())
+	if (idx >= this->_size)
 		throw OutOfBoundsexeption();
 	return (this->_Array[idx]);
 }
