@@ -8,7 +8,8 @@ int main(void)
 	{
 		Array<int> new_array(5);
 		new_array[0] = 5;
-		std::cout << new_array[0] << '\n';
+		Array<int> cpy_array(new_array);
+		std::cout << cpy_array[0] << '\n';
 	}
 	catch (const std::exception& e)
 	{
