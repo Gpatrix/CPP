@@ -1,6 +1,9 @@
 #pragma once
+#include <iostream>
 
-template <typename T> void iter(T* array, int len, void(*fonct)(T&))
+
+template <typename T> 
+void iter(T* array, int len, void (*fonct)(const T&))
 {
 	int	index = 0;
 
@@ -11,7 +14,8 @@ template <typename T> void iter(T* array, int len, void(*fonct)(T&))
 	}
 }
 
-template <typename T> void increment_iter(T& to_increment)
+template <typename T> 
+void display_iter(const T& to_increment)
 {
-	to_increment++;
+	std::cout << to_increment << '\n';
 }
