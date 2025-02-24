@@ -6,7 +6,7 @@
 /*   By: lchauvet <lchauvet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 14:51:56 by lchauvet          #+#    #+#             */
-/*   Updated: 2025/02/23 16:04:26 by lchauvet         ###   ########.fr       */
+/*   Updated: 2025/02/24 09:32:52 by lchauvet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScalarConverter::~ScalarConverter(void) {}
 static void	char_display(double& nb, char* end, std::string& str)
 {
 	std::cout << "char: ";
-	if (end == str.c_str() || nb < CHAR_MIN || CHAR_MAX < nb)
+	if (end == str.c_str() || nb < CHAR_MIN || CHAR_MAX < nb || std::isnan(nb))
 		std::cout << IMPOSSIBLE;
 	else if (nb < 32 || nb > 126)
 		std::cout << NON_DISPLAYABLE;
@@ -33,7 +33,7 @@ static void	char_display(double& nb, char* end, std::string& str)
 static void	int_display(double& nb, char* end, std::string& str)
 {
 	std::cout << "int: ";
-	if (end == str.c_str() || nb < INT_MIN || INT_MAX < nb)
+	if (end == str.c_str() || nb < INT_MIN || INT_MAX < nb || std::isnan(nb))
 		std::cout << IMPOSSIBLE;
 	else
 		std::cout << static_cast<int>(nb);
