@@ -1,11 +1,8 @@
 #include <iostream>
 #include "whatever.hpp"
 
-int test = 5;
-
 int main(void)
 {
-
 	{
 		int a = 2;
 		int b = 3;
