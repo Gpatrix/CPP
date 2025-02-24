@@ -14,7 +14,7 @@ int main(void)
 
 	same_data = Serializer::deserialize(ptr);
 
-	std::cout << same_data->getName() << " " << same_data->getGrade() << '\n'
-			<<data.getName() << " " << data.getGrade() << '\n';
+	std::cout << &same_data << " " << same_data->getName() << " " << same_data->getGrade() << '\n'
+			<< &data << " " << data.getName() << " " << data.getGrade() << '\n';
 	return (0);
 }
