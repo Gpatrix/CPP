@@ -3,7 +3,7 @@
 #include <iostream>
 #include <stdint.h>
 #include <exception>
-#include  <cstring>
+#include <cstring>
 
 template <typename T>
 class Array
@@ -16,18 +16,21 @@ class Array
 		Array(void);
 		Array(unsigned int n);
 		Array(const Array&);
-		~Array(void);
 
 		Array&	operator=(const Array&);
 
 		T	operator[](unsigned int idx);
 		T&	operator[](unsigned int idx) const;
 
+		unsigned int	size(void) const;
+
 		class OutOfBoundsexeption: public std::exception
 		{
 			public:
 				const char* what() const throw();
 		};
+
+		~Array(void);
 };
 
-#include "Array.cpp"
+#include "Array.tpp"

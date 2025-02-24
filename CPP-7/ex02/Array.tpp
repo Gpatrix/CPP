@@ -67,6 +67,12 @@ T&	Array<T>::operator[](unsigned int idx) const
 }
 
 template <typename T>
+unsigned int	Array<T>::size(void) const
+{
+	return (this->_size);
+}
+
+template <typename T>
 const char* Array<T>::OutOfBoundsexeption::what() const throw()
 {
 	return ("Out of bound");
