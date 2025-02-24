@@ -19,7 +19,7 @@ Array<T>::Array(unsigned int n)
 	}
 }
 template <typename T>
-Array<T>::Array(const Array<T>& copy)
+Array<T>::Array(const Array<T>& copy): _Array(NULL)
 {
 	this->operator=(copy);
 }
@@ -76,7 +76,5 @@ template <typename T>
 Array<T>::~Array(void)
 {
 	if (this->_Array)
-	{
 		delete[] this->_Array;
-	}
 }
