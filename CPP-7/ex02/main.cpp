@@ -4,8 +4,38 @@
 
 int main(void)
 {
-	Array<int> new_array(5);
-	std::cout << new_array[0];
+	try
+	{
+		Array<int> new_array(5);
+		new_array[0] = 5;
+		std::cout << new_array[0] << '\n';
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << e.what() << '\n';
+	}
+
+	try
+	{
+		const Array<int> new_array(5);
+		// new_array[0] = 5;
+		std::cout << new_array[0] << '\n';
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << e.what() << '\n';
+	}
+
+	try
+	{
+		Array<int> new_array(5);
+		new_array[50] = 5;
+		std::cout << new_array[0] << '\n';
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << e.what() << '\n';
+	}
 	return (0);
 
 }

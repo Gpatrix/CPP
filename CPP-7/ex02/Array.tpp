@@ -51,7 +51,7 @@ Array<T>&	Array<T>::operator=(const Array& copy)
 }
 
 template <typename T>
-T	Array<T>::operator[](unsigned int idx)
+T	Array<T>::operator[](unsigned int idx) const
 {
 	if (idx >= this->_size)
 		throw OutOfBoundsexeption();
@@ -59,7 +59,7 @@ T	Array<T>::operator[](unsigned int idx)
 }
 
 template <typename T>
-T&	Array<T>::operator[](unsigned int idx) const
+T&	Array<T>::operator[](unsigned int idx)
 {
 	if (idx >= this->_size)
 		throw OutOfBoundsexeption();
