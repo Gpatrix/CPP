@@ -3,9 +3,9 @@ CFLAGS	= -Wall -Wextra -Werror -g3 -std=c++98
 
 RM		= rm -f
 
-NAME	= easyfind
+NAME	= Span
 
-FILE	= main.cpp
+FILE	= main.cpp Span.cpp
 
 OBJS	= $(FILE:%.cpp=%.o)
 
