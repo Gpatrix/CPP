@@ -24,6 +24,8 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+
+	try
 	{
 		Span sp = Span(5);
 		sp.addNumber(6);
@@ -33,6 +35,10 @@ int main()
 		sp.addNumber(11);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 	return 0;
 }
