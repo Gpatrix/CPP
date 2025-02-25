@@ -20,6 +20,14 @@ void Span::addNumber(int new_nb)
 	this->storage.push_back(new_nb);
 }
 
+void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	if (end - begin + this->storage.size() > this->_max_value_nb)
+		throw MaxValueNbexeption();
+
+	this->storage.insert(this->storage.begin(), begin, end);
+}
+
 unsigned int	Span::shortestSpan(void)
 {
 	if (this->storage.size() <= 1)
