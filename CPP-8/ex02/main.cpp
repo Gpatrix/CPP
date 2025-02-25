@@ -1,7 +1,6 @@
 #include "MutantStack.hpp"
 #include <iostream>
 #include <list>
-#include <stack>
 
 int main(void)
 {
@@ -10,22 +9,27 @@ int main(void)
 	mstack.push(5);
 	mstack.push(17);
 
-	std::cout << mstack.top() << std::endl;
+	std::cout << "top: " << mstack.top() 
+	<< " | size: " << mstack.size() << '\n';
 
 	mstack.pop();
 
-	std::cout << mstack.size() << std::endl;
+	std::cout << "new top: " << mstack.top()
+	<< " | new size: " << mstack.size() << '\n';
+
 	mstack.push(3);
 	mstack.push(5);
-	mstack.push(737);
-	//[...]
+	mstack.push(80);
 	mstack.push(1);
 
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 
 	++it;
+	++it;
 	--it;
+	--it;
+
 	while (it != ite)
 	{
 		std::cout << *it << std::endl;
@@ -38,32 +42,38 @@ int main(void)
 
 // int main(void)
 // {
-// 	std::list<int> mlist;
+// 	std::list<int> mylist;
 
-// 	mlist.push_back(5);
-// 	mlist.push_back(17);
+// 	mylist.push_back(5);
+// 	mylist.push_back(17);
 
-// 	std::cout << *mlist.begin() << std::endl;
+// 	std::cout << "top: " << *mylist.begin()
+// 	<< " | size: " << mylist.size() << '\n';
 
-// 	mlist.pop_front();
+// 	mylist.pop_front();
 
-// 	std::cout << mlist.size() << std::endl;
-// 	mlist.push_back(3);
-// 	mlist.push_back(5);
-// 	mlist.push_back(737);
-// 	//[...]
-// 	mlist.push_back(0);
+// 	std::cout << "new top: " << *mylist.begin()
+// 	<< " | new size: " << mylist.size() << '\n';
 
-// 	std::list<int>::iterator it = mlist.begin();
-// 	std::list<int>::iterator ite = mlist.end();
+// 	mylist.push_back(3);
+// 	mylist.push_back(5);
+// 	mylist.push_back(80);
+// 	mylist.push_back(1);
+
+// 	std::list<int>::iterator it = mylist.begin();
+// 	std::list<int>::iterator ite = mylist.end();
 
 // 	++it;
+// 	++it;
 // 	--it;
+// 	--it;
+
 // 	while (it != ite)
 // 	{
 // 		std::cout << *it << std::endl;
 // 		++it;
 // 	}
-// 	std::list<int> s(mlist);
+
+// 	std::list<int> s(mylist);
 // 	return (0);
 // }
