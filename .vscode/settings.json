@@ -1,5 +1,6 @@
 {
 	"files.associations": {
+		"*.tpp": "cpp",
 		"cctype": "cpp",
 		"clocale": "cpp",
 		"cmath": "cpp",
@@ -80,7 +81,8 @@
 		"queue": "cpp",
 		"stack": "cpp",
 		"__functional_base": "cpp",
-		"__memory": "cpp"
+		"__memory": "cpp",
+		"list": "cpp"
 	},
 	"[cpp]": {
 		"editor.suggest.insertMode": "insert"
