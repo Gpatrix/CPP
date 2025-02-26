@@ -38,6 +38,30 @@ void	BitcoinExchange::loadPriceCSV(void)
 	}
 }
 
+bool	BitcoinExchange::is_good_day
+(
+	const int& year_nb,
+	const int& month_nb,
+	const int& day_nb
+)
+{
+	int	max_day = 0;
+
+	if (month_nb == 2)
+	{
+		if (year_nb % 4 == 0 && (year_nb % 100 != 0 || year_nb % 400 == 0)) // is_bissextile
+			max_day = 29;
+		else
+			max_day = 28;
+	}
+	else if (month_nb % 2 != 0)
+		max_day = 31;
+	else
+		max_day = 30;
+	
+	return (day_nb <= max_day && day_nb != 0);
+}
+
 void	BitcoinExchange::parse_Date(std::string& date)
 {
 	if (date.size() != 11)
@@ -45,19 +69,21 @@ void	BitcoinExchange::parse_Date(std::string& date)
 	if (!(std::isdigit(date[0]) && std::isdigit(date[1])
 		&& std::isdigit(date[2]) && std::isdigit(date[3])
 		&& date[4] == '-'
-		&& std::isdigit(date[5]) && std::isdigit(date[6]) && strtol(date.substr(5,6).c_str(), NULL, 10) <= 12
+		&& std::isdigit(date[5]) && std::isdigit(date[6])
 		&& date[7] == '-'
-		&& std::isdigit(date[8]) && std::isdigit(date[9]) && strtol(date.substr(8,9).c_str(), NULL, 10) <= 31
+		&& std::isdigit(date[8]) && std::isdigit(date[9])
 		&& date[10] == ' '
 		))
 	{
-		std::cout << "bad\n";
+		throw	BadInputException(date);
 	}
-	else
-	{
-		std::cout << "good\n";
-	}
-	
+
+	int	year_nb  = strtol(date.substr(0,3).c_str(), NULL, 10);
+	int	month_nb = strtol(date.substr(5,6).c_str(), NULL, 10);
+	int	day_nb   = strtol(date.substr(8,9).c_str(), NULL, 10);
+
+	if (month_nb == 0 || month_nb > 12 || !is_good_day(year_nb, month_nb, day_nb))
+		throw	BadInputException(date);
 }
 
 

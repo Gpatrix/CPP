@@ -17,6 +17,9 @@ class BitcoinExchange
 		void	parse_Date(std::string& date);
 		void	printValue(std::string&);
 
+		bool	is_good_day(const int&, const int&, const int&);
+
+
 	public:
 		BitcoinExchange(void);
 		BitcoinExchange(const BitcoinExchange&);
