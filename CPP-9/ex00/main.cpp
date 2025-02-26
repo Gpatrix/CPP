@@ -1,7 +1,7 @@
 #include "BitcoinExchange.hpp"
 #include <iostream>
 
-int main(int argc, char**)
+int main(int argc, char** argv)
 {
 	if (argc != 2)
 	{
@@ -15,10 +15,10 @@ int main(int argc, char**)
 
 	try
 	{
-		calculator.loadPriceCSV("data.csv");
+		calculator.loadPriceCSV();
 
-		// calculator.loadAccountCSV(argv[1]);
-		// calculator.printResult();
+		calculator.PrintWalletValue(argv[1]);
+		// test les erreur
 	}
 	catch(const std::exception& e)
 	{
