@@ -18,7 +18,6 @@ int main(int argc, char** argv)
 		calculator.loadPriceCSV();
 
 		calculator.PrintWalletValue(argv[1]);
-		// test les erreur
 	}
 	catch(const std::exception& e)
 	{

@@ -8,7 +8,7 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange& copy)
 
 BitcoinExchange&	BitcoinExchange::operator=(const BitcoinExchange& copy)
 {
-	this->pricce_map = copy.pricce_map;
+	this->price_map = copy.price_map;
 	return (*this);
 }
 
@@ -34,7 +34,7 @@ void	BitcoinExchange::loadPriceCSV(void)
 		std::getline(Infile, buffer);
 		price = strtod(buffer.c_str(), NULL);
 
-		this->pricce_map.insert(std::pair<std::string, double>(date, price));
+		this->price_map.insert(std::pair<std::string, double>(date, price));
 	}
 }
 
@@ -86,21 +86,67 @@ void	BitcoinExchange::parse_Date(std::string& date)
 		throw	BadInputException(date);
 }
 
+double	BitcoinExchange::parse_Value(std::string& value)
+{
+	if (value.size() < 2)
+		return (-1);
+
+	double	value_nb;
+	char*	end;
+	value_nb = strtod(value.c_str(), &end);
+
+	if (*end != *value.end())
+		return (-1);
+
+	if (value_nb < 0)
+		throw std::runtime_error("Error: not a positive number.");
+
+	if (value_nb > INT_MAX)
+		throw std::runtime_error("Error: too large a number.");
+
+	return (value_nb);
+}
+
+double	BitcoinExchange::calcPrice(std::string& date)
+{
+	double	diff;
+	double	old_diff;
+
+	if (this->price_map.size() == 1)
+		return ((*this->price_map.begin()).second);
+	
+	std::map<std::string, double>::iterator it = this->price_map.begin();
+	old_diff = it->first.compare(0, 9, date.c_str());
+	it++;
+	for (; it != this->price_map.end(); it++)
+	{
+		diff = it->first.compare(0, 9, date.c_str());
+		if (old_diff > diff)
+			return ((*(--it)).second);
+		old_diff = diff;
+	}
+	return ((*(--it)).second);
+}
 
 void	BitcoinExchange::printValue(std::string& buffer)
 {
 	std::string	date;
 	std::string	value;
+	double		value_nb = 0;
 
 	std::stringstream stream(buffer);
 
 	std::getline(stream, date, '|');
 	if (stream.eof())
 		throw BadInputException(date);
-	parse_Date(date);
-	// std::getline(stream, date);
-	// parse_value(value);
-	//print result
+	this->parse_Date(date);
+	std::getline(stream, value);
+	value_nb = this->parse_Value(value);
+	if (value_nb == -1)
+		throw BadInputException(buffer);
+
+	std::cout << date << "=>" << value << value_nb << " = " 
+	<< calcPrice(date) << '\n';
 }
 
 void	BitcoinExchange::PrintWalletValue(char * file)
@@ -117,6 +163,7 @@ void	BitcoinExchange::PrintWalletValue(char * file)
 		std::getline(Infile, buffer);
 		if (buffer.empty())
 			break;
+
 		try
 		{
 			printValue(buffer);

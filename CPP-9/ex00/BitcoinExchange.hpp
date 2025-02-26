@@ -7,17 +7,21 @@
 #include <cctype>
 #include <string>
 #include <float.h>
+#include <limits.h>
 #include <map>
 
 class BitcoinExchange
 {
 	private:
-		std::map<std::string, double>	pricce_map;
+		std::map<std::string, double>	price_map;
 
 		void	parse_Date(std::string& date);
 		void	printValue(std::string&);
 
 		bool	is_good_day(const int&, const int&, const int&);
+		double	parse_Value(std::string& value);
+
+		double	calcPrice(std::string&);
 
 
 	public:
