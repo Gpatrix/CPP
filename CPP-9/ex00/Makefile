@@ -5,7 +5,7 @@ RM		= rm -f
 
 NAME	= btc
 
-FILE	= main.cpp
+FILE	= main.cpp BitcoinExchange.cpp
 
 OBJS	= $(FILE:%.cpp=%.o)
 

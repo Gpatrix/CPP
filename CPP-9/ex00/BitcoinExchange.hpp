@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include <istream>
+#include <fstream>
 #include <cmath>
 #include <climits>
 #include <float.h>
@@ -10,11 +10,13 @@
 class BitcoinExchange
 {
 	private:
-		std::map<std::string, double>	value;
+		std::map<std::string, double>	pricce_map;
 
 	public:
 		BitcoinExchange(void);
 		BitcoinExchange(const BitcoinExchange&);
+
+		void	loadPriceCSV(std::string);
 
 		BitcoinExchange&	operator=(const BitcoinExchange&);
 

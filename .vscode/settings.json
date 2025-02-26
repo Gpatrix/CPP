@@ -82,7 +82,10 @@
 		"stack": "cpp",
 		"__functional_base": "cpp",
 		"__memory": "cpp",
-		"list": "cpp"
+		"list": "cpp",
+		"map": "cpp",
+		"__tree": "cpp",
+		"climits": "cpp"
 	},
 	"[cpp]": {
 		"editor.suggest.insertMode": "insert"
