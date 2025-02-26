@@ -109,21 +109,17 @@ double	BitcoinExchange::parse_Value(std::string& value)
 
 double	BitcoinExchange::calcPrice(std::string& date)
 {
-	double	diff;
-	double	old_diff;
-
 	if (this->price_map.size() == 1)
 		return ((*this->price_map.begin()).second);
 	
 	std::map<std::string, double>::iterator it = this->price_map.begin();
-	old_diff = it->first.compare(0, 9, date.c_str());
 	it++;
 	for (; it != this->price_map.end(); it++)
 	{
-		diff = it->first.compare(0, 9, date.c_str());
-		if (old_diff > diff)
+		if (it->first.compare(0, 10, date.c_str()) >= 0)
+		{
 			return ((*(--it)).second);
-		old_diff = diff;
+		}
 	}
 	return ((*(--it)).second);
 }
