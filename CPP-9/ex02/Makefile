@@ -5,7 +5,7 @@ RM		= rm -f
 
 NAME	= PmergeMe
 
-FILE	= main.cpp PmergeMe.cpp
+FILE	= main.cpp
 
 OBJS	= $(FILE:%.cpp=%.o)
 

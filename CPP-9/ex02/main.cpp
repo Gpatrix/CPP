@@ -1,9 +1,10 @@
 #include <iostream>
+#include <vector>
 #include "PmergeMe.hpp"
 
 int main(int argc, char** argv)
 {
-	PmergeMe algo;
+	PmergeMe<std::vector<int> > algo;
 
 	if (argc == 1)
 	{
@@ -14,8 +15,9 @@ int main(int argc, char** argv)
 	try
 	{
 		algo.init_bottom(argc, argv);
-
-		algo.sort();
+		std::cout << "Before:  ";
+		algo.print_before();
+		// algo.sort();
 
 	}
 	catch(const std::exception& e)

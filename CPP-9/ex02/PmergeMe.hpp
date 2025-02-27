@@ -1,15 +1,20 @@
+#pragma once
+
 #include <iostream>
 #include <list>
 #include <stdlib.h>
 #include <cstring>
 #include <cmath>
 
+template <typename T>
 class PmergeMe
 {
 	private:
-		std::list<int> top_list;
-		std::list<int> bottom_list;
-		void	show(std::list<int>&);
+		T		_top;
+		T		_bottom;
+		clock_t	time;
+
+		void	split_list(void);
 
 	public:
 		PmergeMe(void);
@@ -19,5 +24,13 @@ class PmergeMe
 		void	init_bottom(int&, char** &);
 		void	sort(void);
 
+		void	print_before(void);
+		void	print_after(void);
+		void	print_time(void);
+
+
 		~PmergeMe(void);
 };
+
+
+#include "PmergeMe.tpp"
