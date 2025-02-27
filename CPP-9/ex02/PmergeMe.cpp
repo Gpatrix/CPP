@@ -12,7 +12,6 @@ PmergeMe&	PmergeMe::operator=(const PmergeMe& copy)
 	return (*this);
 }
 
-
 void	PmergeMe::init_bottom(int& argc, char** &argv)
 {
 	long	nb;
@@ -27,5 +26,21 @@ void	PmergeMe::init_bottom(int& argc, char** &argv)
 	}
 }
 
+void	PmergeMe::show(std::list<int>& list)
+{
+	for (std::list<int>::iterator it = list.begin()
+	; it != list.end(); it++)
+	{
+		std::cout << " " << *it;
+	}
+	std::cout << '\n';
+}
+
+void	PmergeMe::sort(void)
+{
+	std::cout << "Before:  ";
+	this->show(this->bottom_list);
+	
+}
 
 PmergeMe::~PmergeMe(void) {}

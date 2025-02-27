@@ -14,6 +14,9 @@ int main(int argc, char** argv)
 	try
 	{
 		algo.init_bottom(argc, argv);
+
+		algo.sort();
+
 	}
 	catch(const std::exception& e)
 	{
