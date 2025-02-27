@@ -93,7 +93,7 @@ void	PmergeMe<T>::sort(void)
 	// std::cout << "Before:  ";
 	// this->show(this->_bottom);
 	clock_t	_start_time = clock();
-	// TODO start time
+
 	if (this->_bottom.size() != 1)
 	{
 		this->split_list();
@@ -104,7 +104,6 @@ void	PmergeMe<T>::sort(void)
 		this->_top.push_back(this->_bottom[0]);
 	}
 	
-	// TODO end time
 	this->_time += static_cast<double>(clock() - _start_time) / CLOCKS_PER_SEC;
 
 	// std::cout << "after:   ";
