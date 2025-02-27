@@ -15,12 +15,12 @@ PmergeMe&	PmergeMe::operator=(const PmergeMe& copy)
 
 void	PmergeMe::init_bottom(int& argc, char** &argv)
 {
-	double	nb;
+	long	nb;
 	char*	end;
 	for (int index = 1; index < argc; index++)
 	{
 		nb = strtol(argv[index], &end, 10);
-		if (nb < 0 || *end != '\0')
+		if (nb < 0 || *end != '\0' || !std::isdigit(argv[index][0]))
 			throw std::runtime_error("Bad args");
 		
 		this->bottom_list.push_back(static_cast<int>(nb));
