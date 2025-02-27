@@ -1,10 +1,11 @@
 #pragma once
 
 #include <iostream>
-#include <list>
+#include <iomanip>
 #include <stdlib.h>
 #include <cstring>
 #include <cmath>
+#include <time.h>
 
 template <typename T>
 class PmergeMe
@@ -12,7 +13,7 @@ class PmergeMe
 	private:
 		T		_top;
 		T		_bottom;
-		clock_t	time;
+		double	_time;
 
 		void	split_list(void);
 

@@ -39,12 +39,21 @@ void PmergeMe<T>::print_after(void)
 	std::cout << '\n';
 }
 
+#include <unistd.h>
+template <typename T>
+void	PmergeMe<T>::print_time(void)
+{
+	std::cout << std::fixed << this->_time << " seconds\n";
+}
+
 
 template <typename T>
 void	PmergeMe<T>::init_bottom(int& argc, char** &argv)
 {
 	long	nb;
 	char*	end;
+	clock_t	_start_time = clock();
+
 	for (int index = 1; index < argc; index++)
 	{
 		nb = strtol(argv[index], &end, 10);
@@ -53,15 +62,29 @@ void	PmergeMe<T>::init_bottom(int& argc, char** &argv)
 		
 		this->_bottom.push_back(static_cast<int>(nb));
 	}
+	this->_time = static_cast<double>(clock() - _start_time) / CLOCKS_PER_SEC;
 }
 
-// void	PmergeMe::split_list(void)
-// {
-// 	// if ()
-// 	// {
-// 	// 	/* code */
-// 	// }
-// }
+template <typename T>
+void	PmergeMe<T>::split_list(void)
+{
+	typename T::iterator it = this->_bottom.begin();
+	int nb_pair = this->_bottom.size() / 2;
+	for (int paire = 0; paire < nb_pair; paire++)
+	{
+		if (*it > *(it + 1))
+		{
+			this->_top.push_back(*it);
+			this->_bottom.erase(it);
+		}
+		else
+		{
+			this->_top.push_back(*(it + 1));
+			this->_bottom.erase(it + 1);
+		}
+		it++;
+	}
+}
 
 
 template <typename T>
@@ -69,13 +92,20 @@ void	PmergeMe<T>::sort(void)
 {
 	// std::cout << "Before:  ";
 	// this->show(this->_bottom);
+	clock_t	_start_time = clock();
 	// TODO start time
 	if (this->_bottom.size() != 1)
 	{
 		this->split_list();
-		//bla bla bla
+		// bla bla bla
 	}
+	else
+	{
+		this->_top.push_back(this->_bottom[0]);
+	}
+	
 	// TODO end time
+	this->_time += static_cast<double>(clock() - _start_time) / CLOCKS_PER_SEC;
 
 	// std::cout << "after:   ";
 	// this->show(this->_top);
