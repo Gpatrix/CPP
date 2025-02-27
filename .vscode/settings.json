@@ -85,7 +85,8 @@
 		"list": "cpp",
 		"map": "cpp",
 		"__tree": "cpp",
-		"climits": "cpp"
+		"climits": "cpp",
+		"__string": "cpp"
 	},
 	"[cpp]": {
 		"editor.suggest.insertMode": "insert"
