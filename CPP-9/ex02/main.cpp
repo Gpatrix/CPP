@@ -17,16 +17,23 @@ int main(int argc, char** argv)
 	try
 	{
 		algo_vector.init_bottom(argc, argv);
+		algo_deque.init_bottom(argc, argv);
 
 		std::cout << "Before:  ";
 		algo_vector.show();
 
 		algo_vector.sort();
+		algo_deque.sort();
 
 		std::cout << "after:   ";
 		algo_vector.show();
 
+		std::cout << "Time to process a range of 5 elements with std::vector :   ";
 		algo_vector.print_time();
+
+		std::cout << "Time to process a range of 5 elements with std::deque  :   ";
+		algo_deque.print_time();
+
 	}
 	catch(const std::exception& e)
 	{
