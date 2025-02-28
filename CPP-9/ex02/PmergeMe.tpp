@@ -98,11 +98,12 @@ int	PmergeMe<T>::binarySearch(T& list, int left, int right, int& key)
 }
 
 template <typename T>
-void	PmergeMe<T>::insertElement(T& arr, int& size, int& element)
+void	PmergeMe<T>::insertElement(T& list, int& size, int& element)
 {
-	int pos = binarySearch(arr, 0, size, element);
-	std::cout << size << " " << pos << '\n';
-	arr.insert(arr.begin() + pos, element);
+	int pos = binarySearch(list, 0, size, element);
+
+	list.insert(list.begin() + pos, element);
+
 	size++;
 }
 
@@ -119,24 +120,17 @@ void PmergeMe<T>::mergeInsertionSort(T& list, int n)
 
 	this->split_list(list, larger, smaller, pairedSize);
 
-	// If n is odd, handle the last element
 	int unpaired = (n % 2 == 1) ? list[n - 1] : -1;
 
-	// Step 2: Recursively sort the larger elements
 	mergeInsertionSort(larger, pairedSize);
 
-	// Step 3: Insert the first smaller element into sorted sequence
 	sortedSize = pairedSize;
-	// for (int i = 0; i < pairedSize; i++)
-	// 	sorted.push_back(larger[i]);
 	
 	insertElement(larger, sortedSize, smaller[0]);
 
-	// // Step 4: Insert remaining elements in specific order
 	T	insertionOrder;
 	int	orderIndex = 0;
 
-	// // Generate insertion order as per the algorithm
 	for (int i = 1; i < pairedSize; i++)
 	{
 		insertionOrder.push_back(smaller[i]);
@@ -148,11 +142,9 @@ void PmergeMe<T>::mergeInsertionSort(T& list, int n)
 		orderIndex++;
 	}
 
-	// Perform binary insertion
 	for (int i = 0; i < orderIndex; i++)
 		insertElement(larger, sortedSize, insertionOrder[i]);
 
-	// Copy sorted elements back to original array
 	for (int i = 0; i < sortedSize; i++)
 		list[i] = larger[i];
 }
