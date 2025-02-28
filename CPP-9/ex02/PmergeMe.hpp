@@ -15,7 +15,9 @@ class PmergeMe
 		double	_time;
 
 		void	split_list(void);
-		void mergeInsertionSort(T& arr, int& n);
+		void	mergeInsertionSort(T& arr, int n);
+		void	insertElement(T arr, int& size, int& element);
+		int		binarySearch(T& arr, int left, int right, int& key);
 
 	public:
 		PmergeMe(void);
