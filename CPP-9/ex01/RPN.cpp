@@ -74,26 +74,18 @@ void	RPN::do_arg(const char& input)
 
 void	RPN::calculate(char* &info)
 {
-	bool	is_space = false;
 	while (*info)
 	{
-		if (is_space)
+		if (*info == ' ')
 		{
-			if (*info != ' ')
-				throw std::runtime_error("Error");
-			else
-			{
-				is_space = false;
-				info++;
-				continue;
-			}
+			info++;
+			continue;
 		}
 		
 		check_arg(*info);
 
 		do_arg(*info);
 
-		is_space = !is_space;
 		info++;
 	}
 	
