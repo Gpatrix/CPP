@@ -98,7 +98,7 @@ double	BitcoinExchange::parse_Value(std::string& value)
 	if (*end != *value.end())
 		return (-1);
 
-	if (value_nb < 1)
+	if (value_nb <= 0)
 		throw std::runtime_error("Error: not a positive number.");
 
 	if (value_nb > INT_MAX)
