@@ -18,25 +18,14 @@ PmergeMe<T>&	PmergeMe<T>::operator=(const PmergeMe<T>& copy)
 }
 
 template <typename T>
-void PmergeMe<T>::print_before(void)
+void PmergeMe<T>::show(void)
 {
-	for (typename T::iterator it = this->_bottom.begin()
-	; it != this->_bottom.end(); it++)
+	for (typename T::iterator it = this->_main_list.begin()
+	; it != this->_main_list.end(); it++)
 	{
 		std::cout << " " << *it;
 	}
-	std::cout << '\n';
-}
-
-template <typename T>
-void PmergeMe<T>::print_after(void)
-{
-	for (typename T::iterator it = this->_top.begin()
-	; it != this->_top.end(); it++)
-	{
-		std::cout << " " << *it;
-	}
-	std::cout << '\n';
+	// std::cout << '\n';
 }
 
 #include <unistd.h>
@@ -86,28 +75,95 @@ void	PmergeMe<T>::split_list(void)
 	}
 }
 
-
 template <typename T>
 void	PmergeMe<T>::sort(void)
 {
-	// std::cout << "Before:  ";
-	// this->show(this->_bottom);
 	clock_t	_start_time = clock();
 
-	if (this->_bottom.size() != 1)
-	{
-		this->split_list();
-		// bla bla bla
-	}
-	else
-	{
-		this->_top.push_back(this->_bottom[0]);
-	}
-	
+	mergeInsertionSort(this->_main_list, this->_main_list.size());
+
 	this->_time += static_cast<double>(clock() - _start_time) / CLOCKS_PER_SEC;
 
-	// std::cout << "after:   ";
-	// this->show(this->_top);
+}
+
+// Function to perform binary search for insertion
+int binarySearch(int arr[], int left, int right, int key)
+{
+	while (left < right)
+	{
+		int mid = left + (right - left) / 2;
+		if (arr[mid] < key)
+			left = mid + 1;
+		else
+			right = mid;
+	}
+	return left;
+}
+
+// Function to insert an element at the correct position
+void insertElement(int arr[], int *size, int element)
+{
+	int pos = binarySearch(arr, 0, *size, element);
+	for (int i = *size; i > pos; i--)
+		arr[i] = arr[i - 1];
+	arr[pos] = element;
+	(*size)++;
+}
+
+// Merge-Insertion Sort function
+template <typename T>
+void PmergeMe<T>::mergeInsertionSort(T& arr, int& n)
+{
+	if (n <= 1)
+		return;
+
+	int pairedSize = n / 2;
+	int larger[pairedSize], smaller[pairedSize], sortedSize = 0;
+
+	// Step 1: Pair elements and find larger/smaller
+	for (int i = 0; i < pairedSize; i++)
+	{
+		if (arr[2 * i] > arr[2 * i + 1])
+		{
+			larger[i] = arr[2 * i];
+			smaller[i] = arr[2 * i + 1];
+		}
+		else
+		{
+			larger[i] = arr[2 * i + 1];
+			smaller[i] = arr[2 * i];
+		}
+	}
+
+	// If n is odd, handle the last element
+	int unpaired = (n % 2 == 1) ? arr[n - 1] : -1;
+
+	// Step 2: Recursively sort the larger elements
+	mergeInsertionSort(larger, pairedSize);
+
+	// Step 3: Insert the first smaller element into sorted sequence
+	sortedSize = pairedSize;
+	int sorted[n];
+	for (int i = 0; i < pairedSize; i++)
+		sorted[i] = larger[i];
+	insertElement(sorted, &sortedSize, smaller[0]);
+
+	// Step 4: Insert remaining elements in specific order
+	int insertionOrder[n - sortedSize], orderIndex = 0;
+
+	// Generate insertion order as per the algorithm
+	for (int i = 1; i < pairedSize; i++)
+		insertionOrder[orderIndex++] = smaller[i];
+	if (n % 2 == 1)
+		insertionOrder[orderIndex++] = unpaired;
+
+	// Perform binary insertion
+	for (int i = 0; i < orderIndex; i++)
+		insertElement(sorted, &sortedSize, insertionOrder[i]);
+
+	// Copy sorted elements back to original array
+	for (int i = 0; i < sortedSize; i++)
+		arr[i] = sorted[i];
 }
 
 template <typename T>

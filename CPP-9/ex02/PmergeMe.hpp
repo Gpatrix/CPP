@@ -11,11 +11,11 @@ template <typename T>
 class PmergeMe
 {
 	private:
-		T		_top;
-		T		_bottom;
+		T		_main_list;
 		double	_time;
 
 		void	split_list(void);
+		void mergeInsertionSort(T& arr, int& n);
 
 	public:
 		PmergeMe(void);
@@ -25,8 +25,7 @@ class PmergeMe
 		void	init_bottom(int&, char** &);
 		void	sort(void);
 
-		void	print_before(void);
-		void	print_after(void);
+		void	show(void);
 		void	print_time(void);
 
 
