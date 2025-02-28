@@ -28,10 +28,10 @@ int main(int argc, char** argv)
 		std::cout << "after:   ";
 		algo_vector.show();
 
-		std::cout << "Time to process a range of 5 elements with std::vector :   ";
+		std::cout << "Time to process a range of " << argc - 1 << " elements with std::vector :   ";
 		algo_vector.print_time();
 
-		std::cout << "Time to process a range of 5 elements with std::deque  :   ";
+		std::cout << "Time to process a range of " << argc - 1 << " elements with std::deque  :   ";
 		algo_deque.print_time();
 
 	}
