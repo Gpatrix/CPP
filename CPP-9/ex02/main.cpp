@@ -1,10 +1,12 @@
 #include <iostream>
 #include <vector>
+#include <deque>
 #include "PmergeMe.hpp"
 
 int main(int argc, char** argv)
 {
-	PmergeMe<std::vector<int> > algo;
+	PmergeMe<std::vector<int> > algo_vector;
+	PmergeMe<std::deque<int> > algo_deque;
 
 	if (argc == 1)
 	{
@@ -14,17 +16,17 @@ int main(int argc, char** argv)
 
 	try
 	{
-		algo.init_bottom(argc, argv);
+		algo_vector.init_bottom(argc, argv);
 
 		std::cout << "Before:  ";
-		algo.show();
+		algo_vector.show();
 
-		algo.sort();
+		algo_vector.sort();
 
 		std::cout << "after:   ";
-		algo.show();
+		algo_vector.show();
 
-		algo.print_time();
+		algo_vector.print_time();
 	}
 	catch(const std::exception& e)
 	{
