@@ -55,23 +55,20 @@ void	PmergeMe<T>::init_bottom(int& argc, char** &argv)
 }
 
 template <typename T>
-void	PmergeMe<T>::split_list(void)
+void	PmergeMe<T>::split_list(T& list, T& larger, T& smaller, int& size)
 {
-	typename T::iterator it = this->_bottom.begin();
-	int nb_pair = this->_bottom.size() / 2;
-	for (int paire = 0; paire < nb_pair; paire++)
+	for (int i = 0; i < size; i++)
 	{
-		if (*it > *(it + 1))
+		if (list[2 * i] > list[2 * i + 1])
 		{
-			this->_top.push_back(*it);
-			this->_bottom.erase(it);
+			larger.push_back(list[2 * i]);
+			smaller.push_back(list[2 * i + 1]);
 		}
 		else
 		{
-			this->_top.push_back(*(it + 1));
-			this->_bottom.erase(it + 1);
+			larger.push_back(list[2 * i + 1]);
+			smaller.push_back(list[2 * i]);
 		}
-		it++;
 	}
 }
 
@@ -86,14 +83,13 @@ void	PmergeMe<T>::sort(void)
 
 }
 
-// Function to perform binary search for insertion
 template <typename T>
-int	PmergeMe<T>::binarySearch(T& arr, int left, int right, int& key)
+int	PmergeMe<T>::binarySearch(T& list, int left, int right, int& key)
 {
 	while (left < right)
 	{
 		int mid = left + (right - left) / 2;
-		if (arr[mid] < key)
+		if (list[mid] < key)
 			left = mid + 1;
 		else
 			right = mid;
@@ -101,7 +97,6 @@ int	PmergeMe<T>::binarySearch(T& arr, int left, int right, int& key)
 	return (left);
 }
 
-// Function to insert an element at the correct position
 template <typename T>
 void	PmergeMe<T>::insertElement(T& arr, int& size, int& element)
 {
@@ -111,9 +106,8 @@ void	PmergeMe<T>::insertElement(T& arr, int& size, int& element)
 	size++;
 }
 
-// Merge-Insertion Sort function
 template <typename T>
-void PmergeMe<T>::mergeInsertionSort(T& arr, int n)
+void PmergeMe<T>::mergeInsertionSort(T& list, int n)
 {
 	if (n <= 1)
 		return;
@@ -123,23 +117,10 @@ void PmergeMe<T>::mergeInsertionSort(T& arr, int n)
 	T smaller;
 	int sortedSize = 0;
 
-	// Step 1: Pair elements and find larger/smaller
-	for (int i = 0; i < pairedSize; i++)
-	{
-		if (arr[2 * i] > arr[2 * i + 1])
-		{
-			larger.push_back(arr[2 * i]);
-			smaller.push_back(arr[2 * i + 1]);
-		}
-		else
-		{
-			larger.push_back(arr[2 * i + 1]);
-			smaller.push_back(arr[2 * i]);
-		}
-	}
+	this->split_list(list, larger, smaller, pairedSize);
 
 	// If n is odd, handle the last element
-	int unpaired = (n % 2 == 1) ? arr[n - 1] : -1;
+	int unpaired = (n % 2 == 1) ? list[n - 1] : -1;
 
 	// Step 2: Recursively sort the larger elements
 	mergeInsertionSort(larger, pairedSize);
@@ -173,7 +154,7 @@ void PmergeMe<T>::mergeInsertionSort(T& arr, int n)
 
 	// Copy sorted elements back to original array
 	for (int i = 0; i < sortedSize; i++)
-		arr[i] = larger[i];
+		list[i] = larger[i];
 }
 
 template <typename T>
