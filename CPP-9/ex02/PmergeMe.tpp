@@ -103,12 +103,11 @@ int	PmergeMe<T>::binarySearch(T& arr, int left, int right, int& key)
 
 // Function to insert an element at the correct position
 template <typename T>
-void	PmergeMe<T>::insertElement(T arr, int& size, int& element)
+void	PmergeMe<T>::insertElement(T& arr, int& size, int& element)
 {
 	int pos = binarySearch(arr, 0, size, element);
-	for (int i = size; i > pos; i--)
-		arr[i] = arr[i - 1];
-	arr[pos] = element;
+	std::cout << size << " " << pos << '\n';
+	arr.insert(arr.begin() + pos, element);
 	size++;
 }
 
@@ -147,10 +146,10 @@ void PmergeMe<T>::mergeInsertionSort(T& arr, int n)
 
 	// Step 3: Insert the first smaller element into sorted sequence
 	sortedSize = pairedSize;
-	T sorted;
-	for (int i = 0; i < pairedSize; i++)
-		sorted.push_back(larger[i]);
-	insertElement(sorted, sortedSize, smaller[0]);
+	// for (int i = 0; i < pairedSize; i++)
+	// 	sorted.push_back(larger[i]);
+	
+	insertElement(larger, sortedSize, smaller[0]);
 
 	// // Step 4: Insert remaining elements in specific order
 	T	insertionOrder;
@@ -170,20 +169,11 @@ void PmergeMe<T>::mergeInsertionSort(T& arr, int n)
 
 	// Perform binary insertion
 	for (int i = 0; i < orderIndex; i++)
-		insertElement(sorted, sortedSize, insertionOrder[i]);
-
-	std::cout << '\n';
-	for (typename T::iterator it = sorted.begin()
-	; it != sorted.end(); it++)
-	{
-		std::cout << " " << *it;
-	}
-	std::cout << '\n';
-	
+		insertElement(larger, sortedSize, insertionOrder[i]);
 
 	// Copy sorted elements back to original array
 	for (int i = 0; i < sortedSize; i++)
-		this->_main_list[i] = sorted[i];
+		arr[i] = larger[i];
 }
 
 template <typename T>
