@@ -30,7 +30,6 @@ class PmergeMe
 		void	show(void);
 		void	print_time(void);
 
-
 		~PmergeMe(void);
 };
 

@@ -28,7 +28,6 @@ void PmergeMe<T>::show(void)
 	std::cout << '\n';
 }
 
-#include <unistd.h>
 template <typename T>
 void	PmergeMe<T>::print_time(void)
 {
@@ -84,12 +83,12 @@ void	PmergeMe<T>::sort(void)
 }
 
 template <typename T>
-int	PmergeMe<T>::binarySearch(T& list, int left, int right, int& key)
+int	PmergeMe<T>::binarySearch(T& list, int left, int right, int& element)
 {
 	while (left < right)
 	{
 		int mid = left + (right - left) / 2;
-		if (list[mid] < key)
+		if (list[mid] < element)
 			left = mid + 1;
 		else
 			right = mid;
