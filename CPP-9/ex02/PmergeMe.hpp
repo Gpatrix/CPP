@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <iomanip>
-#include <stdlib.h>
+#include <cstdlib>
 #include <cstring>
 #include <cmath>
 #include <time.h>
@@ -24,7 +24,7 @@ class PmergeMe
 		PmergeMe(const PmergeMe&);
 		PmergeMe&	operator=(const PmergeMe&);
 
-		void	init_bottom(int&, char** &);
+		void	init_list(int&, char** &);
 		void	sort(void);
 
 		void	show(void);

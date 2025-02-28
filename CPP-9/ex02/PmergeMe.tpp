@@ -37,16 +37,16 @@ void	PmergeMe<T>::print_time(void)
 
 
 template <typename T>
-void	PmergeMe<T>::init_bottom(int& argc, char** &argv)
+void	PmergeMe<T>::init_list(int& argc, char** &argv)
 {
-	long	nb;
+	double	nb;
 	char*	end;
 	clock_t	_start_time = clock();
 
 	for (int index = 1; index < argc; index++)
 	{
-		nb = strtol(argv[index], &end, 10);
-		if (nb < 0 || *end != '\0' || !std::isdigit(argv[index][0]))
+		nb = std::strtod(argv[index], &end);
+		if (nb < 0 || nb > __INT_MAX__|| *end != '\0' || !std::isdigit(argv[index][0]))
 			throw std::runtime_error("Error");
 		
 		this->_main_list.push_back(static_cast<int>(nb));

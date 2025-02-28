@@ -16,8 +16,8 @@ int main(int argc, char** argv)
 
 	try
 	{
-		algo_vector.init_bottom(argc, argv);
-		algo_deque.init_bottom(argc, argv);
+		algo_vector.init_list(argc, argv);
+		algo_deque.init_list(argc, argv);
 
 		std::cout << "Before:  ";
 		algo_vector.show();
